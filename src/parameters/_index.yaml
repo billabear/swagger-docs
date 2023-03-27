@@ -1,6 +1,8 @@
 # path
 customerId:
   $ref: './path/customerId.yaml'
+productId:
+  $ref: './path/productId.yaml'
 
 # limit
 limit:
