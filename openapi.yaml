@@ -1,0 +1,131 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: BillaBear
+  description: The REST API provided by BillaBear
+  license:
+    name: MIT
+  contact:
+    name: API Support
+    url: 'http://www.example.com/support'
+    email: support@example.com
+servers:
+  - url: 'http://petstore.swagger.io/v1'
+tags:
+  - name: Billing
+paths:
+  /customer:
+    get:
+      summary: List
+      operationId: listCustomers
+      description: List all customers
+      tags:
+        - Customers
+      parameters:
+        - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: A paged array of customers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+    post:
+      summary: Create
+      operationId: createCustomer
+      description: Create a customer
+      tags:
+        - Customers
+      responses:
+        '201':
+          $ref: '#/components/responses/NullResponse'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+  '/customer/{customerId}':
+    get:
+      summary: Detail
+      operationId: showCustomerById
+      description: Info for a specific customer
+      tags:
+        - Customers
+      parameters:
+        - $ref: '#/components/parameters/customerId'
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+components:
+  parameters:
+    customerId:
+      name: customerId
+      in: path
+      required: true
+      description: The id of the pet to retrieve
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      description: How many items to return at one time (max 100)
+      required: false
+      schema:
+        type: integer
+        format: int32
+  schemas:
+    Customer:
+      type: object
+      required:
+        - email
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        reference:
+          type: string
+        external_reference:
+          type: string
+        address:
+          type: Address
+    Product:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        external_reference:
+          type: string
+    Address:
+      $red: ./Address.yaml
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+  responses:
+    UnexpectedError:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NullResponse:
+      description: Null response
