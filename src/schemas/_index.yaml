@@ -1,6 +1,6 @@
 Customer:
   $ref: "./Customer.yaml"
-Customer:
+Product:
   $ref: "./Product.yaml"
 Address:
   $red: "./Address.yaml"  
