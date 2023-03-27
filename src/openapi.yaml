@@ -18,6 +18,10 @@ paths:
     $ref: "./resources/customers/customers.yaml"
   /customer/{customerId}:
     $ref: "./resources/customers/customer.yaml"
+  /product:
+    $ref: "./resources/products/products.yaml"
+  /product/{productId}:
+    $ref: "./resources/products/product.yaml"
 components:
   parameters:
     $ref: "./parameters/_index.yaml"
