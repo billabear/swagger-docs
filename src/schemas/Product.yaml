@@ -1,0 +1,11 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+  external_reference:
+    type: string

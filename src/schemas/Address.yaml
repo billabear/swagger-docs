@@ -1,0 +1,18 @@
+type: object
+required:
+  - country
+properties:
+  company_name:
+    type: string
+  street_line_one:
+    type: string
+  street_line_two:
+    type: string
+  city:
+    type: string
+  region:
+    type: string
+  country:
+    type: string
+  post_code:
+    type: string

@@ -1,0 +1,29 @@
+get:
+  summary: List
+  operationId: listCustomers
+  description: List all customers
+  tags:
+  - Customers
+  parameters:
+    - $ref: "../../parameters/query/limit.yaml"
+  responses:
+    '200':
+      description: A paged array of customers
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/Customer.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
+post:
+  summary: Create
+  operationId: createCustomer
+  description: Create a customer
+  tags:
+  - Customers
+  responses:
+    '201':
+        $ref : "../../responses/NullResponse.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"
+

@@ -1,0 +1,15 @@
+type: object
+required:
+  - email
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+  reference:
+    type: string
+  external_reference:
+    type: string
+  address:
+    type: Address

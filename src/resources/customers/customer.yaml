@@ -1,0 +1,17 @@
+get:
+  summary: Detail
+  operationId: showCustomerById
+  description: Info for a specific customer
+  tags:
+    - Customers
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/Customer.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
