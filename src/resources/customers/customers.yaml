@@ -12,7 +12,17 @@ get:
       content:
         application/json:
           schema:
-            $ref: "../../schemas/Customer.yaml"
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/Customer.yaml"
+              has_more:
+                type: boolean
+              last_key:
+                type: string
+                format: uuid      
     default:
       $ref: "../../responses/UnexpectedError.yaml"
 post:
