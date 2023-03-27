@@ -6,6 +6,11 @@ get:
   - Customers
   parameters:
     - $ref: "../../parameters/query/limit.yaml"
+    - $ref: "../../parameters/query/last_key.yaml"
+    - $ref: "../../parameters/query/email.yaml"
+    - $ref: "../../parameters/query/country.yaml"
+    - $ref: "../../parameters/query/reference.yaml"
+    - $ref: "../../parameters/query/external_reference.yaml"
   responses:
     '200':
       description: A paged array of customers

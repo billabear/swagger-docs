@@ -7,3 +7,15 @@ productId:
 # limit
 limit:
   $ref: './query/limit.yaml'
+last_key:
+  $ref: './query/last_key.yaml'
+email:
+  $ref: './query/email.yaml'
+country:
+  $ref: './query/country.yaml'
+reference:
+  $ref: './query/reference.yaml'
+external_reference:
+  $ref: './query/external_reference.yaml'
+name:
+  $ref: './query/name.yaml'
