@@ -23,13 +23,28 @@ paths:
         - Customers
       parameters:
         - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/last_key'
+        - $ref: '#/components/parameters/email'
+        - $ref: '#/components/parameters/country'
+        - $ref: '#/components/parameters/reference'
+        - $ref: '#/components/parameters/external_reference'
       responses:
         '200':
           description: A paged array of customers
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Customer'
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Customer'
+                  has_more:
+                    type: boolean
+                  last_key:
+                    type: string
+                    format: uuid
         default:
           $ref: '#/components/responses/UnexpectedError'
     post:
@@ -61,13 +76,72 @@ paths:
                 $ref: '#/components/schemas/Customer'
         default:
           $ref: '#/components/responses/UnexpectedError'
+  /product:
+    get:
+      summary: List
+      operationId: listProduct
+      description: List all products
+      tags:
+        - Products
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/last_key'
+        - $ref: '#/components/parameters/name'
+      responses:
+        '200':
+          description: A paged array of products
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Product'
+                  has_more:
+                    type: boolean
+                  last_key:
+                    type: string
+                    format: uuid
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+    post:
+      summary: Create
+      operationId: createProduct
+      description: Create a product
+      tags:
+        - Products
+      responses:
+        '201':
+          $ref: '#/components/responses/NullResponse'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+  '/product/{productId}':
+    get:
+      summary: Detail
+      operationId: showProductById
+      description: Info for a specific product
+      tags:
+        - Products
+      parameters:
+        - $ref: '#/components/parameters/productId'
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
 components:
   parameters:
     customerId:
       name: customerId
       in: path
       required: true
-      description: The id of the pet to retrieve
+      description: The id of the customer to retrieve
       schema:
         type: string
     productId:
@@ -85,6 +159,48 @@ components:
       schema:
         type: integer
         format: int32
+    last_key:
+      name: last_key
+      in: query
+      description: The key to be used in pagination to say what the last key of the previous page was
+      required: false
+      schema:
+        type: string
+    email:
+      name: email
+      in: query
+      description: The email to search for
+      required: false
+      schema:
+        type: string
+    country:
+      name: country
+      in: query
+      description: The country code to search for
+      required: false
+      schema:
+        type: string
+    reference:
+      name: reference
+      in: query
+      description: The reference to search for
+      required: false
+      schema:
+        type: string
+    external_reference:
+      name: external_reference
+      in: query
+      description: The external reference to search for
+      required: false
+      schema:
+        type: string
+    name:
+      name: email
+      in: query
+      description: The email to search for
+      required: false
+      schema:
+        type: string
   schemas:
     Customer:
       type: object
