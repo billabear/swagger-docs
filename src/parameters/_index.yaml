@@ -1,6 +1,6 @@
 # path
-petId:
-  $ref: './path/petId.yaml'
+customerId:
+  $ref: './path/customerId.yaml'
 
 # limit
 limit:

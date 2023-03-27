@@ -1,8 +1,8 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Swagger Petstore
-  description: Multi-file boilerplate for OpenAPI Specification.
+  title: BillaBear
+  description: The REST API provided by BillaBear
   license:
     name: MIT
   contact:
@@ -12,12 +12,12 @@ info:
 servers:
   - url: http://petstore.swagger.io/v1
 tags:
-  - name: pets
+  - name: Billing
 paths:
-  /pets:
-    $ref: "./resources/pets.yaml"
-  /pets/{petId}:
-    $ref: "./resources/pet.yaml"
+  /customer:
+    $ref: "./resources/customers/customers.yaml"
+  /customer/{customerId}:
+    $ref: "./resources/customers/customer.yaml"
 components:
   parameters:
     $ref: "./parameters/_index.yaml"
