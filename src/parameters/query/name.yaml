@@ -1,0 +1,6 @@
+name: email
+in: query
+description: The email to search for
+required: false
+schema:
+  type: string

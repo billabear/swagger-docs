@@ -1,0 +1,6 @@
+name: external_reference
+in: query
+description: The external reference to search for
+required: false
+schema:
+  type: string

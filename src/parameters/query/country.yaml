@@ -1,0 +1,6 @@
+name: country
+in: query
+description: The country code to search for
+required: false
+schema:
+  type: string

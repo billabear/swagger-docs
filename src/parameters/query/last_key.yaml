@@ -1,0 +1,6 @@
+name: last_key
+in: query
+description: The key to be used in pagination to say what the last key of the previous page was
+required: false
+schema:
+  type: string

@@ -1,0 +1,6 @@
+name: reference
+in: query
+description: The reference to search for
+required: false
+schema:
+  type: string

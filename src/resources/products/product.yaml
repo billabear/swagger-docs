@@ -1,0 +1,17 @@
+get:
+  summary: Detail
+  operationId: showProductById
+  description: Info for a specific product
+  tags:
+    - Products
+  parameters:
+    - $ref: "../../parameters/path/productId.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/Product.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
