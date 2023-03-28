@@ -15,3 +15,16 @@ get:
             $ref: "../../schemas/Customer.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"
+put:
+  summary: Update
+  operationId: UpdateCustomer
+  description: Update a customer
+  tags:
+  - Customers
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    '202':
+        $ref: "../../schemas/Customer.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"
