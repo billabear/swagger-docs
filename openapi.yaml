@@ -55,7 +55,18 @@ paths:
         - Customers
       responses:
         '201':
-          $ref: '#/components/responses/NullResponse'
+          $ref: '#/components/schemas/Customer'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+    put:
+      summary: Create
+      operationId: createCustomer
+      description: Create a customer
+      tags:
+        - Customers
+      responses:
+        '202':
+          $ref: '#/components/schemas/Customer'
         default:
           $ref: '#/components/responses/UnexpectedError'
   '/customer/{customerId}':
@@ -74,6 +85,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Customer'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+    put:
+      summary: Update
+      operationId: UpdateCustomer
+      description: Update a customer
+      tags:
+        - Customers
+      parameters:
+        - $ref: '#/components/parameters/customerId'
+      responses:
+        '202':
+          $ref: '#/components/schemas/Customer'
         default:
           $ref: '#/components/responses/UnexpectedError'
   /product:
@@ -133,6 +157,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+    put:
+      summary: Update
+      operationId: UpdateProduct
+      description: Update a product
+      tags:
+        - Products
+      parameters:
+        - $ref: '#/components/parameters/productId'
+      responses:
+        '202':
+          $ref: '#/components/schemas/Product'
         default:
           $ref: '#/components/responses/UnexpectedError'
 components:
