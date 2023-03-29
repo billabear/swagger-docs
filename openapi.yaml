@@ -53,19 +53,14 @@ paths:
       description: Create a customer
       tags:
         - Customers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
       responses:
         '201':
-          $ref: '#/components/schemas/Customer'
-        default:
-          $ref: '#/components/responses/UnexpectedError'
-    put:
-      summary: Create
-      operationId: createCustomer
-      description: Create a customer
-      tags:
-        - Customers
-      responses:
-        '202':
           $ref: '#/components/schemas/Customer'
         default:
           $ref: '#/components/responses/UnexpectedError'
@@ -136,6 +131,12 @@ paths:
       description: Create a product
       tags:
         - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
       responses:
         '201':
           $ref: '#/components/responses/NullResponse'
@@ -170,6 +171,80 @@ paths:
       responses:
         '202':
           $ref: '#/components/schemas/Product'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+  '/product/{productId}/price':
+    get:
+      summary: List
+      operationId: listPrice
+      description: List all prices
+      tags:
+        - responses
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/last_key'
+      responses:
+        '200':
+          description: A paged array of prices for a product
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/paths/~1product~1%7BproductId%7D~1price/post/requestBody/content/application~1json/schema'
+                  has_more:
+                    type: boolean
+                  last_key:
+                    type: string
+                    format: uuid
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+    post:
+      summary: Create
+      operationId: createPrice
+      description: Create a price
+      tags:
+        - Prices
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - amount
+                - currency
+                - recurring
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                amount:
+                  type: integer
+                currency:
+                  type: string
+                external_reference:
+                  type: string
+                  nullable: true
+                recurring:
+                  type: boolean
+                schedule:
+                  type: string
+                  enum:
+                    - week
+                    - month
+                    - year
+                  nullable: true
+                including_tax:
+                  type: boolean
+                public:
+                  type: boolean
+      responses:
+        '201':
+          $ref: '#/components/responses/NullResponse'
         default:
           $ref: '#/components/responses/UnexpectedError'
 components:
