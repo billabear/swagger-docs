@@ -1,0 +1,26 @@
+type: object
+required:
+  - amount
+  - currency
+  - recurring
+properties:
+  id:
+    type: string
+    format: uuid
+  amount:
+    type: integer  
+  currency:
+    type: string
+  external_reference:
+    type: string
+    nullable: true
+  recurring:
+    type: boolean
+  schedule:
+    type: string
+    enum: [week, month, year]
+    nullable: true
+  including_tax:
+    type: boolean
+  public:
+    type: boolean  

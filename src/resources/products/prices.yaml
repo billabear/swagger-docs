@@ -1,0 +1,45 @@
+get:
+  summary: List
+  operationId: listPrice
+  description: List all prices
+  tags:
+  - responses
+  parameters:
+    - $ref: "../../parameters/query/limit.yaml"
+    - $ref: "../../parameters/query/last_key.yaml"
+  responses:
+    200:
+      description: A paged array of prices for a product
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/Price.yaml"
+              has_more:
+                type: boolean
+              last_key:
+                type: string
+                format: uuid      
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
+post:
+  summary: Create
+  operationId: createPrice
+  description: Create a price
+  tags:
+  - Prices
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/Price.yaml"
+  responses:
+    '201':
+        $ref : "../../responses/NullResponse.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"
