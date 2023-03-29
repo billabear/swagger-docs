@@ -36,19 +36,14 @@ post:
   description: Create a customer
   tags:
   - Customers
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/Customer.yaml"
   responses:
     '201':
-        $ref: "../../schemas/Customer.yaml"
-    default:
-        $ref : "../../responses/UnexpectedError.yaml"
-put:
-  summary: Create
-  operationId: createCustomer
-  description: Create a customer
-  tags:
-  - Customers
-  responses:
-    '202':
         $ref: "../../schemas/Customer.yaml"
     default:
         $ref : "../../responses/UnexpectedError.yaml"

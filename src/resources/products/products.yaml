@@ -33,6 +33,12 @@ post:
   description: Create a product
   tags:
   - Products
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/Product.yaml"
   responses:
     '201':
         $ref : "../../responses/NullResponse.yaml"
