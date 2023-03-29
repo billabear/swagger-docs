@@ -4,6 +4,7 @@ required:
 properties:
   company_name:
     type: string
+    example: Humbly Arrogant
   street_line_one:
     type: string
   street_line_two:
@@ -14,5 +15,6 @@ properties:
     type: string
   country:
     type: string
+    example: GB
   post_code:
     type: string

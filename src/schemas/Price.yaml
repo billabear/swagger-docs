@@ -8,19 +8,27 @@ properties:
     type: string
     format: uuid
   amount:
-    type: integer  
+    type: integer
+    example: 1000  
   currency:
     type: string
+    example: EUR
+    description: Three-letter ISO currency code. Must be upper-case
   external_reference:
     type: string
     nullable: true
   recurring:
     type: boolean
+    example: false
   schedule:
     type: string
     enum: [week, month, year]
     nullable: true
+    description: Required if recurring is true
   including_tax:
     type: boolean
+    nullable: true
+    description: If the price is including tax. If false tax will be added on top of the price.
   public:
     type: boolean  
+    nullable: true

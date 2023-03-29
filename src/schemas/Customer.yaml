@@ -5,10 +5,12 @@ properties:
   id:
     type: string
     format: uuid
-  name:
+  email:
     type: string
+    example: "iain.cambridge@example.org"
   reference:
     type: string
+    example: "internal-id"
   external_reference:
     type: string
   address:

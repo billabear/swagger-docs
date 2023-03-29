@@ -3,7 +3,7 @@ get:
   operationId: listPrice
   description: List all prices
   tags:
-  - responses
+  - Prices
   parameters:
     - $ref: "../../parameters/query/limit.yaml"
     - $ref: "../../parameters/query/last_key.yaml"
