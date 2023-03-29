@@ -9,3 +9,5 @@ properties:
     type: string
   external_reference:
     type: string
+    nullable: true
+    description: The reference given by the payment provider
