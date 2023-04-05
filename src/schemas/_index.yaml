@@ -1,8 +1,18 @@
-Customer:
-  $ref: "./Customer.yaml"
-Product:
-  $ref: "./Product.yaml"
 Address:
   $red: "./Address.yaml"  
+Customer:
+  $ref: "./Customer.yaml"
 Error:
   $ref: "./Error.yaml"
+FrontendToken:
+  $ref: "./FrontendToken.yaml"
+PaymentDetails:
+  $red: "./PaymentDetails.yaml"
+Price:
+  $ref: "./Price.yaml"
+Product:
+  $ref: "./Product.yaml"
+Subscription:
+  $ref: "./Subscription.yaml"
+SubscriptionPlan:
+  $ref: "./SubscriptionPlan.yaml"
