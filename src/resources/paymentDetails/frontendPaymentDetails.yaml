@@ -1,0 +1,36 @@
+get:
+  summary: Start Frontend Detail Collection
+  operationId: startFrontendPaymentDetails
+  description: Start frontend payment details
+  tags:
+  - PaymentDetails
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    '200':
+      description: A paged array of customers
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/FrontendToken.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
+post:
+  summary: Complete Frontend Detail Collection
+  operationId: completeFrontendPaymentDetails
+  description: Complete frontend payment details
+  tags:
+  - PaymentDetails
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/FrontendToken.yaml"
+  responses:
+    '201':
+        $ref: "../../schemas/PaymentDetails.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"

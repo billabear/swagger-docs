@@ -1,0 +1,28 @@
+type: object
+required:
+  - country
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+    nullable: true
+  default:
+    type: boolean
+  brand:
+    type: string
+    nullable: true
+    example: 'visa'
+  last_four:
+    type: string
+    example: '0484'
+  expiry_month:
+    type: string
+    example: 01
+  expiry_year:
+    type: string
+    example: 26
+  created_at:
+    type: string
+    format: datetime
