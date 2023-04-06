@@ -110,7 +110,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/paths/~1customer~1%7BcustomerId%7D~1payment-details~1frontend-payment-token/post/requestBody/content/application~1json/schema'
+                $ref: '#/components/schemas/FrontendToken'
         default:
           $ref: '#/components/responses/UnexpectedError'
     post:
@@ -126,13 +126,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - token
-              properties:
-                token:
-                  type: string
-                  example: dummy-token-here
+              $ref: '#/components/schemas/FrontendToken'
       responses:
         '201':
           type: object
@@ -163,6 +157,47 @@ paths:
             created_at:
               type: string
               format: datetime
+        default:
+          $ref: '#/components/responses/UnexpectedError'
+  '/customer/{customerId}/subscription/start':
+    post:
+      summary: Start Subscription For Customer
+      operationId: customerStartSubscription
+      description: Start subscription for a customer
+      tags:
+        - Subscriptions
+      parameters:
+        - $ref: '#/components/parameters/customerId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - subscription_plan
+                - price
+              properties:
+                subscription_plan:
+                  type: string
+                  format: uuid
+                  description: The ID for the subscription plan to be used
+                payment_details:
+                  type: string
+                  format: uuid
+                  description: The Id for the customer's payment details to be used
+                price:
+                  type: string
+                  format: uuid
+                  description: The ID for the price to be used
+                seat_numbrers:
+                  type: integer
+                  example: 1
+      responses:
+        '201':
+          $ref: '#/components/schemas/Subscription'
+        '406':
+          description: Customer has no payment details to be used
         default:
           $ref: '#/components/responses/UnexpectedError'
   /product:
@@ -264,7 +299,7 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: '#/paths/~1product~1%7BproductId%7D~1price/post/requestBody/content/application~1json/schema'
+                      $ref: '#/components/schemas/Price'
                   has_more:
                     type: boolean
                   last_key:
@@ -283,44 +318,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - amount
-                - currency
-                - recurring
-              properties:
-                id:
-                  type: string
-                  format: uuid
-                  readOnly: true
-                amount:
-                  type: integer
-                  example: 1000
-                currency:
-                  type: string
-                  example: EUR
-                  description: Three-letter ISO currency code. Must be upper-case
-                external_reference:
-                  type: string
-                  nullable: true
-                recurring:
-                  type: boolean
-                  example: false
-                schedule:
-                  type: string
-                  enum:
-                    - week
-                    - month
-                    - year
-                  nullable: true
-                  description: Required if recurring is true
-                including_tax:
-                  type: boolean
-                  nullable: true
-                  description: If the price is including tax. If false tax will be added on top of the price.
-                public:
-                  type: boolean
-                  nullable: true
+              $ref: '#/components/schemas/Price'
       responses:
         '201':
           $ref: '#/components/responses/NullResponse'
@@ -393,6 +391,8 @@ components:
       schema:
         type: string
   schemas:
+    Address:
+      $red: ./Address.yaml
     Customer:
       type: object
       required:
@@ -411,6 +411,66 @@ components:
           type: string
         address:
           type: Address
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    FrontendToken:
+      type: object
+      required:
+        - token
+      properties:
+        token:
+          type: string
+          example: dummy-token-here
+    PaymentDetails:
+      $red: ./PaymentDetails.yaml
+    Price:
+      type: object
+      required:
+        - amount
+        - currency
+        - recurring
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        amount:
+          type: integer
+          example: 1000
+        currency:
+          type: string
+          example: EUR
+          description: Three-letter ISO currency code. Must be upper-case
+        external_reference:
+          type: string
+          nullable: true
+        recurring:
+          type: boolean
+          example: false
+        schedule:
+          type: string
+          enum:
+            - week
+            - month
+            - year
+          nullable: true
+          description: Required if recurring is true
+        including_tax:
+          type: boolean
+          nullable: true
+          description: If the price is including tax. If false tax will be added on top of the price.
+        public:
+          type: boolean
+          nullable: true
     Product:
       type: object
       required:
@@ -425,19 +485,40 @@ components:
           type: string
           nullable: true
           description: The reference given by the payment provider
-    Address:
-      $red: ./Address.yaml
-    Error:
+    Subscription:
       type: object
-      required:
-        - code
-        - message
       properties:
-        code:
-          type: integer
-          format: int32
-        message:
+        id:
           type: string
+          format: uuid
+        schedule:
+          type: string
+          example: month
+        created_at:
+          type: datetime
+        updated_at:
+          type: datetime
+        ended_at:
+          type: datetime
+        valid_until:
+          type: datetime
+        main_external_reference:
+          type: string
+        child_external_reference:
+          type: string
+        price:
+          type: Price
+        subscription_plan:
+          type: SubscriptionPlan
+    SubscriptionPlan:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+          example: Plany McPlanFace
   responses:
     UnexpectedError:
       description: unexpected error
