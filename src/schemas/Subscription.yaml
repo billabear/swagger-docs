@@ -1,0 +1,24 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  schedule:
+    type: string
+    example: "month"
+  created_at:
+    type: datetime
+  updated_at:
+    type: datetime
+  ended_at:
+    type: datetime
+  valid_until:
+    type: datetime        
+  main_external_reference:
+    type: string
+  child_external_reference:
+    type: string
+  price:
+    type: Price
+  subscription_plan:
+    type: SubscriptionPlan
