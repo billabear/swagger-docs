@@ -353,6 +353,29 @@ paths:
                     format: uuid
         default:
           $ref: '#/components/responses/UnexpectedError'
+  '/subscription/{subscriptionId}':
+    get:
+      summary: Detail
+      operationId: showSubscriptionById
+      description: Info for a specific subscription
+      tags:
+        - Subscriptions
+      parameters:
+        - name: subscriptionId
+          in: path
+          required: true
+          description: The id of the subscription to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
 components:
   parameters:
     customerId:
@@ -363,7 +386,7 @@ components:
       schema:
         type: string
     productId:
-      name: product
+      name: productId
       in: path
       required: true
       description: The id of the product to retrieve
