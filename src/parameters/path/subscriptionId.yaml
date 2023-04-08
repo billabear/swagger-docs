@@ -1,0 +1,6 @@
+name: subscriptionId
+in: path
+required: true
+description: The id of the subscription to retrieve
+schema:
+  type: string

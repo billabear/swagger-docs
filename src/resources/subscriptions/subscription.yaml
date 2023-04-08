@@ -1,0 +1,17 @@
+get:
+  summary: Detail
+  operationId: showSubscriptionById
+  description: Info for a specific subscription
+  tags:
+    - Subscriptions
+  parameters:
+    - $ref: "../../parameters/path/subscriptionId.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/Subscription.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"

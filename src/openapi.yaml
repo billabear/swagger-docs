@@ -30,6 +30,8 @@ paths:
     $ref: "./resources/products/prices.yaml"
   /subscription:
     $ref: "./resources/subscriptions/subscriptions.yaml"  
+  /subscription/{subscriptionId}:
+    $ref: "./resources/subscriptions/subscription.yaml"  
 components:
   parameters:
     $ref: "./parameters/_index.yaml"
