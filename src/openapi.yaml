@@ -28,6 +28,8 @@ paths:
     $ref: "./resources/products/product.yaml"
   /product/{productId}/price:
     $ref: "./resources/products/prices.yaml"
+  /subscription:
+    $ref: "./resources/subscriptions/subscriptions.yaml"  
 components:
   parameters:
     $ref: "./parameters/_index.yaml"
