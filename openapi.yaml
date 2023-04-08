@@ -324,6 +324,35 @@ paths:
           $ref: '#/components/responses/NullResponse'
         default:
           $ref: '#/components/responses/UnexpectedError'
+  /subscription:
+    get:
+      summary: List
+      operationId: listSubscriptions
+      description: List all subscriptions
+      tags:
+        - Subscriptions
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/last_key'
+      responses:
+        '200':
+          description: A paged array of subscriptions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Subscription'
+                  has_more:
+                    type: boolean
+                  last_key:
+                    type: string
+                    format: uuid
+        default:
+          $ref: '#/components/responses/UnexpectedError'
 components:
   parameters:
     customerId:
