@@ -376,6 +376,54 @@ paths:
                 $ref: '#/components/schemas/Subscription'
         default:
           $ref: '#/components/responses/UnexpectedError'
+  '/subscription/{subscriptionId}/cancel':
+    post:
+      summary: Cancel Subscription
+      operationId: cancelSubscription
+      description: Info for a specific subscription
+      tags:
+        - Subscriptions
+      parameters:
+        - $ref: '#/paths/~1subscription~1%7BsubscriptionId%7D/get/parameters/0'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - when
+                - refund_type
+              properties:
+                when:
+                  type: string
+                  default: end-of-run
+                  enum:
+                    - end-of-run
+                    - instantly
+                    - specific-date
+                refund_type:
+                  type: string
+                  default: none
+                  enum:
+                    - none
+                    - full
+                    - prorate
+                date:
+                  type: string
+                  format: date
+                comment:
+                  type: string
+                  nullable: true
+      responses:
+        '201':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/NullResponse'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
 components:
   parameters:
     customerId:
