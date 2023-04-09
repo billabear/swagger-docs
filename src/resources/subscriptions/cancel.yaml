@@ -1,0 +1,43 @@
+post:
+  summary: Cancel Subscription
+  operationId: cancelSubscription
+  description: Info for a specific subscription
+  tags:
+    - Subscriptions
+  parameters:
+    - $ref: "../../parameters/path/subscriptionId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+            type: object
+            required:
+              - when
+              - refund_type
+            properties:
+              when:
+                type: string
+                default: 'end-of-run'
+                enum: ['end-of-run', 'instantly', 'specific-date']
+              refund_type:
+                type: string
+                default: none
+                enum: ['none', 'full', 'prorate']
+              date:
+                type: string
+                format: date
+              comment:
+                type: string
+                nullable: true
+
+
+  responses:
+    '201':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../responses/NullResponse.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
