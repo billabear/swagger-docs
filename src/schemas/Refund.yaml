@@ -1,0 +1,32 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  amount:
+    type: integer
+    example: 1000  
+  currency:
+    type: string
+    example: EUR
+    description: Three-letter ISO currency code. Must be upper-case
+  external_reference:
+    type: string
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+    example: "Customer thought they cancelled but had not"
+  status:
+    type: string
+    enum: [started, rejected, authorised, issued]  
+  created_at:
+    type: datetime  
+  payment:
+    $ref: "./Payment.yaml"
+  customer:
+    $ref: "./Customer.yaml"
+  billing_admin:
+    $ref: "./BillingAdmin.yaml"
+    nullable: true
