@@ -1,0 +1,30 @@
+get:
+  summary: List
+  operationId: listPayment
+  description: List all payment
+  tags:
+  - Payments
+  parameters:
+    - $ref: "../../parameters/query/limit.yaml"
+    - $ref: "../../parameters/query/last_key.yaml"
+    - $ref: "../../parameters/query/name.yaml"
+  responses:
+    200:
+      description: A paged array of payments
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/Payment.yaml"
+              has_more:
+                type: boolean
+              last_key:
+                type: string
+                format: uuid      
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
+

@@ -22,6 +22,8 @@ paths:
     $ref: "./resources/paymentDetails/frontendPaymentDetails.yaml"
   /customer/{customerId}/subscription/start:
     $ref: "./resources/subscriptions/customerStart.yaml"
+  /payment:
+    $ref: "./resources/payments/list.yaml"  
   /product:
     $ref: "./resources/products/products.yaml"
   /product/{productId}:
