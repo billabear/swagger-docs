@@ -257,6 +257,78 @@ paths:
                     format: uuid
         default:
           $ref: '#/components/responses/UnexpectedError'
+  /refund:
+    get:
+      summary: List
+      operationId: listRefund
+      description: List all refund
+      tags:
+        - Refunds
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/last_key'
+        - $ref: '#/components/parameters/name'
+      responses:
+        '200':
+          description: A paged array of refunds
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                          readOnly: true
+                        amount:
+                          type: integer
+                          example: 1000
+                        currency:
+                          type: string
+                          example: EUR
+                          description: Three-letter ISO currency code. Must be upper-case
+                        external_reference:
+                          type: string
+                          nullable: true
+                        comment:
+                          type: string
+                          nullable: true
+                          example: Customer thought they cancelled but had not
+                        status:
+                          type: string
+                          enum:
+                            - started
+                            - rejected
+                            - authorised
+                            - issued
+                        created_at:
+                          type: datetime
+                        payment:
+                          $ref: '#/paths/~1payment/get/responses/200/content/application~1json/schema/properties/data/items'
+                        customer:
+                          $ref: '#/components/schemas/Customer'
+                        billing_admin:
+                          nullable: true
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              format: uuid
+                            display_name:
+                              type: string
+                              example: BillingMesiter
+                  has_more:
+                    type: boolean
+                  last_key:
+                    type: string
+                    format: uuid
+        default:
+          $ref: '#/components/responses/UnexpectedError'
   /product:
     get:
       summary: List
