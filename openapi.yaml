@@ -200,6 +200,63 @@ paths:
           description: Customer has no payment details to be used
         default:
           $ref: '#/components/responses/UnexpectedError'
+  /payment:
+    get:
+      summary: List
+      operationId: listPayment
+      description: List all payment
+      tags:
+        - Payments
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/last_key'
+        - $ref: '#/components/parameters/name'
+      responses:
+        '200':
+          description: A paged array of payments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                          readOnly: true
+                        amount:
+                          type: integer
+                          example: 1000
+                        currency:
+                          type: string
+                          example: EUR
+                          description: Three-letter ISO currency code. Must be upper-case
+                        external_reference:
+                          type: string
+                          nullable: true
+                        status:
+                          type: string
+                          enum:
+                            - pending
+                            - completed
+                            - disputed
+                            - partially_refunded
+                            - fully_refunded
+                        created_at:
+                          type: datetime
+                        customer:
+                          $ref: '#/components/schemas/Customer'
+                  has_more:
+                    type: boolean
+                  last_key:
+                    type: string
+                    format: uuid
+        default:
+          $ref: '#/components/responses/UnexpectedError'
   /product:
     get:
       summary: List
