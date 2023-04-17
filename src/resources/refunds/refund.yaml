@@ -1,0 +1,17 @@
+get:
+  summary: Detail
+  operationId: showRefundById
+  description: Info for a specific Refund
+  tags:
+    - Refunds
+  parameters:
+    - $ref: "../../parameters/path/refundId.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/Refund.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
