@@ -24,6 +24,8 @@ paths:
     $ref: "./resources/subscriptions/customerStart.yaml"
   /payment:
     $ref: "./resources/payments/list.yaml"  
+  /payment/{paymentId}/refund:
+    $ref: "./resources/payments/refund.yaml"  
   /refund:
     $ref: "./resources/refunds/list.yaml"  
   /refund/{refundId}:
