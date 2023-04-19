@@ -127,6 +127,38 @@ paths:
                     format: uuid
         default:
           $ref: '#/components/responses/UnexpectedError'
+  '/customer/{paymentId}/payment':
+    get:
+      summary: List Customer Payments
+      operationId: listCustomerPayment
+      description: List Customer Payment
+      tags:
+        - Customers
+        - Payments
+      parameters:
+        - $ref: '#/components/parameters/customerId'
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/last_key'
+        - $ref: '#/components/parameters/name'
+      responses:
+        '200':
+          description: A paged array of payments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/paths/~1payment/get/responses/200/content/application~1json/schema/properties/data/items'
+                  has_more:
+                    type: boolean
+                  last_key:
+                    type: string
+                    format: uuid
+        default:
+          $ref: '#/components/responses/UnexpectedError'
   '/customer/{customerId}/payment-details/frontend-payment-token':
     get:
       summary: Start Frontend Detail Collection
