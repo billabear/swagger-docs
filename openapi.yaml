@@ -257,6 +257,51 @@ paths:
                     format: uuid
         default:
           $ref: '#/components/responses/UnexpectedError'
+  '/payment/{paymentId}/refund':
+    post:
+      summary: Refund Payment
+      operationId: refundPayment
+      description: Issue a refund for payment
+      tags:
+        - Payments
+      parameters:
+        - name: paymentId
+          in: path
+          required: true
+          description: The id of the payment
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - amount
+              properties:
+                amount:
+                  type: integer
+                  example: 1000
+                currency:
+                  type: string
+                  example: EUR
+                  description: Three-letter ISO currency code. Must be upper-case
+                  nullable: true
+                reason:
+                  type: string
+                  nullable: true
+                  example: Customer thought they cancelled but had not
+      responses:
+        '202':
+          $ref: '#/components/responses/NullResponse'
+        '404':
+          $ref: '#/components/responses/NullResponse'
+        '406':
+          $ref: '#/components/responses/NullResponse'
+          description: Refund amount higher than payment
+        default:
+          $ref: '#/components/responses/UnexpectedError'
   /refund:
     get:
       summary: List
