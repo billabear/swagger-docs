@@ -1,0 +1,24 @@
+post:
+  summary: Refund Payment
+  operationId: refundPayment
+  description: Issue a refund for payment
+  tags:
+  - Payments
+  parameters:
+    - $ref: "../../parameters/path/paymentId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/IssueRefundPayment.yaml"
+  responses:
+    '202':
+        $ref : "../../responses/NullResponse.yaml"
+    '404':     
+        $ref : "../../responses/NullResponse.yaml"
+    '406':
+        $ref : "../../responses/NullResponse.yaml"
+        description: "Refund amount higher than payment"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"

@@ -1,0 +1,16 @@
+type: object
+required:
+  - amount
+properties:
+  amount:
+    type: integer
+    example: 1000  
+  currency:
+    type: string
+    example: EUR
+    description: Three-letter ISO currency code. Must be upper-case
+    nullable: true 
+  reason:
+    type: string
+    nullable: true
+    example: "Customer thought they cancelled but had not"
