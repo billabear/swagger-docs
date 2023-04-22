@@ -1,0 +1,25 @@
+get:
+  summary: Fetch Customer Limits
+  operationId: showCustomerLimitsById
+  description: Limits for a specific customer
+  tags:
+    - Customers
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              limits:
+                type: array
+                items: {}
+              features:
+                type: array
+              user_count:
+                type: int  
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
