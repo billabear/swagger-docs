@@ -798,10 +798,11 @@ components:
           type: string
         address:
           type: Address
-        group:
+        brand:
           type: string
           nullable: true
           example: default
+          description: Defaults to 'default' if not sent.
     Error:
       type: object
       required:
