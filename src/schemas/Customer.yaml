@@ -15,3 +15,7 @@ properties:
     type: string
   address:
     type: Address
+  group:
+    type: string
+    nullable: true
+    example: default
