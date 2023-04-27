@@ -16,5 +16,5 @@ properties:
   country:
     type: string
     example: GB
-  post_code:
+  postcode:
     type: string
