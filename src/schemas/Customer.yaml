@@ -15,6 +15,11 @@ properties:
     type: string
   address:
     type: Address
+  locale:
+    type: string
+    nullable: true
+    example: en
+    description: Defaults to 'en' if not sent.  
   brand:
     type: string
     nullable: true
