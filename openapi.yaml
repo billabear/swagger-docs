@@ -95,6 +95,24 @@ paths:
           $ref: '#/components/schemas/Customer'
         default:
           $ref: '#/components/responses/UnexpectedError'
+  '/customer/{customerId}/disable':
+    post:
+      summary: Disable Customer
+      operationId: disableCustomewr
+      description: Info for a specific subscription
+      tags:
+        - Customers
+      parameters:
+        - $ref: '#/components/parameters/customerId'
+      responses:
+        '201':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/NullResponse'
+        default:
+          $ref: '#/components/responses/UnexpectedError'
   '/customer/{customerId}/limits':
     get:
       summary: Fetch Customer Limits
