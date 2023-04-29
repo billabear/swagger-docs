@@ -20,6 +20,8 @@ paths:
     $ref: "./resources/customers/customer.yaml"
   /customer/{customerId}/disable:
     $ref: "./resources/customers/disable.yaml"
+  /customer/{customerId}/enable:
+    $ref: "./resources/customers/enable.yaml"
   /customer/{customerId}/limits:
     $ref: "./resources/customers/limits.yaml"
   /customer/{customerId}/refund:

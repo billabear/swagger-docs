@@ -1,7 +1,7 @@
 post:
-  summary: Disable Customer
-  operationId: disableCustomewr
-  description: Disable customer
+  summary: Enable Customer
+  operationId: enableCustomewr
+  description: Enable a customer
   tags:
     - Customers
   parameters:
