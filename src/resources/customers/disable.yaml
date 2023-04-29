@@ -1,0 +1,17 @@
+post:
+  summary: Disable Customer
+  operationId: disableCustomewr
+  description: Info for a specific subscription
+  tags:
+    - Customers
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    '201':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../responses/NullResponse.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
