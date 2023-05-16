@@ -8,6 +8,11 @@ properties:
   email:
     type: string
     example: "iain.cambridge@example.org"
+  billing_type:
+    type: string
+    example: 'card'
+    nullable: true
+    choices: ['card', 'invoice']  
   reference:
     type: string
     example: "internal-id"
