@@ -18,6 +18,8 @@ paths:
     $ref: "./resources/customers/customers.yaml"
   /customer/{customerId}:
     $ref: "./resources/customers/customer.yaml"
+  /customer/{customerId}/voucher:
+    $ref: "./resources/customers/applyVoucher.yaml"
   /customer/{customerId}/disable:
     $ref: "./resources/customers/disable.yaml"
   /customer/{customerId}/enable:

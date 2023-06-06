@@ -1,0 +1,18 @@
+post:
+  summary: Apply voucher
+  operationId: applyVoucher
+  description: Apply Voucher to Customer
+  tags:
+  - Customers
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/VoucherCode.yaml"
+  responses:
+    '202':
+        $ref : "../../responses/NullResponse.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"
+
