@@ -1,0 +1,38 @@
+post:
+  summary: Change Subscription Plan
+  operationId: customerChangeSubscriptionPlan
+  description: Change the subscription plan for a customer
+  tags:
+  - Subscriptions
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - subscription_plan
+            - price
+            - when
+          properties:
+            when:
+              type: string
+              example: instantly
+              choices:['instantly', 'next-cycle']
+            subscription_plan:
+              type: string
+              format: uuid
+              description: The ID for the subscription plan to be used
+            price:
+              type: string
+              format: uuid
+              description: The ID for the price to be used
+  responses:
+    '201':
+        $ref: "../../schemas/Subscription.yaml"
+    '406':
+        description: Customer has no payment details to be used
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"
