@@ -54,6 +54,8 @@ paths:
     $ref: "./resources/subscriptions/subscription.yaml"  
   /subscription/{subscriptionId}/cancel:
     $ref: "./resources/subscriptions/cancel.yaml"  
+  /subscription/{subscriptionId}/plan:
+    $ref: "./resources/subscriptions/subscriptionPlan.yaml"  
 components:
   parameters:
     $ref: "./parameters/_index.yaml"
