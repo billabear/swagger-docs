@@ -20,7 +20,7 @@ post:
             when:
               type: string
               example: instantly
-              choices:['instantly', 'next-cycle']
+              choices: ['instantly', 'next-cycle']
             subscription_plan:
               type: string
               format: uuid
@@ -32,7 +32,5 @@ post:
   responses:
     '201':
         $ref: "../../schemas/Subscription.yaml"
-    '406':
-        description: Customer has no payment details to be used
     default:
         $ref : "../../responses/UnexpectedError.yaml"
