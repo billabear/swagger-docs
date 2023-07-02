@@ -13,6 +13,7 @@ properties:
     example: 'card'
     nullable: true
     choices: ['card', 'invoice']  
+    description: "Choice between card and invoice"
   reference:
     type: string
     example: "internal-id"
