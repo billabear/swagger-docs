@@ -26,5 +26,7 @@ put:
   responses:
     '202':
         $ref: "../../schemas/Customer.yaml"
+    '400':
+      $ref: "../../responses/ValidationError.yaml"
     default:
         $ref : "../../responses/UnexpectedError.yaml"
