@@ -1,6 +1,6 @@
 get:
   summary: Fetch Customer Limits
-  operationId: showCustomerLimitsById
+  operationId: v1ShowCustomerLimitsById
   description: Limits for a specific customer
   tags:
     - Customers
