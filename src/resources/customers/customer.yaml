@@ -1,6 +1,6 @@
 get:
   summary: Detail
-  operationId: showCustomerById
+  operationId: v1ShowCustomerById
   description: Info for a specific customer
   tags:
     - Customers
@@ -19,7 +19,7 @@ get:
       $ref: "../../responses/UnexpectedError.yaml"
 put:
   summary: Update
-  operationId: UpdateCustomer
+  operationId: v1UpdateCustomer
   description: Update a customer
   tags:
   - Customers

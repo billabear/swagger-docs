@@ -1,6 +1,6 @@
 get:
   summary: List
-  operationId: listCustomers
+  operationId: v1ListCustomers
   description: List all customers
   tags:
   - Customers
@@ -32,7 +32,7 @@ get:
       $ref: "../../responses/UnexpectedError.yaml"
 post:
   summary: Create
-  operationId: createCustomer
+  operationId: v1CreateCustomer
   description: Create a customer
   tags:
   - Customers
