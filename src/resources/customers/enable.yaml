@@ -1,6 +1,6 @@
 post:
   summary: Enable Customer
-  operationId: enableCustomewr
+  operationId: v1EnableCustomer
   description: Enable a customer
   tags:
     - Customers
