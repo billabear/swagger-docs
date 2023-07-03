@@ -13,6 +13,8 @@ get:
         application/json:
           schema:
             $ref: "../../schemas/Customer.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"
 put:

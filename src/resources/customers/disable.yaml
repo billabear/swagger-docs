@@ -13,5 +13,7 @@ post:
         application/json:
           schema:
             $ref: "../../responses/NullResponse.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"
