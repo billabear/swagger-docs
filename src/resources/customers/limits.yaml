@@ -21,5 +21,7 @@ get:
                 type: array
               user_count:
                 type: int  
+    '404':
+      $ref: "../../responses/NullResponse.yaml"            
     default:
       $ref: "../../responses/UnexpectedError.yaml"
