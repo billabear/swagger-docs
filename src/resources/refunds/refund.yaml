@@ -1,6 +1,6 @@
 get:
   summary: Detail
-  operationId: showRefundById
+  operationId: v1ShowRefundById
   description: Info for a specific Refund
   tags:
     - Refunds
@@ -13,5 +13,7 @@ get:
         application/json:
           schema:
             $ref: "../../schemas/Refund.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"
