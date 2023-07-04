@@ -33,7 +33,9 @@ paths:
   /customer/{customerId}/payment-details/frontend-payment-token:
     $ref: "./resources/paymentDetails/frontendPaymentDetails.yaml"
   /customer/{customerId}/payment-details/{paymentDetailsId}:
-    $ref: "./resources/paymentDetails/paymentDetail.yaml"  
+    $ref: "./resources/paymentDetails/paymentDetail.yaml"    
+  /customer/{customerId}/payment-details:
+    $ref: "./resources/paymentDetails/paymentDetails.yaml"  
   /customer/{customerId}/payment-details/{paymentDetailsId}/default:
     $ref: "./resources/paymentDetails/makeDefault.yaml"
   /customer/{customerId}/subscription/start:
