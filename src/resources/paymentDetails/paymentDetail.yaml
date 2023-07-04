@@ -1,0 +1,16 @@
+delete:
+  summary: Delete
+  operationId: v1DeletePaymentDetails
+  description: Delete Payment Details
+  tags:
+  - PaymentDetails
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+    - $ref: "../../parameters/path/paymentDetailsId.yaml"
+  responses:
+    '202':
+      $ref: "../../responses/NullResponse.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"

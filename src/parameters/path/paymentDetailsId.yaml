@@ -1,0 +1,6 @@
+name: paymentDetailsId
+in: path
+required: true
+description: The id of the payment details
+schema:
+  type: string
