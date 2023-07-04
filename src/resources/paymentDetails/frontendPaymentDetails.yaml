@@ -13,6 +13,8 @@ get:
         application/json:
           schema:
             $ref: "../../schemas/FrontendToken.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"
 post:
@@ -32,5 +34,7 @@ post:
   responses:
     '201':
         $ref: "../../schemas/PaymentDetails.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
     default:
         $ref : "../../responses/UnexpectedError.yaml"
