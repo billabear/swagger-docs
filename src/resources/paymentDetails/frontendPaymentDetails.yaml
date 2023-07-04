@@ -1,6 +1,6 @@
 get:
   summary: Start Frontend Detail Collection
-  operationId: startFrontendPaymentDetails
+  operationId: v1StartFrontendPaymentDetails
   description: Start frontend payment details
   tags:
   - PaymentDetails
@@ -17,7 +17,7 @@ get:
       $ref: "../../responses/UnexpectedError.yaml"
 post:
   summary: Complete Frontend Detail Collection
-  operationId: completeFrontendPaymentDetails
+  operationId: v1CompleteFrontendPaymentDetails
   description: Complete frontend payment details
   tags:
   - PaymentDetails
