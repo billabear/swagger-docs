@@ -13,5 +13,7 @@ get:
         application/json:
           schema:
             $ref: "../../schemas/Subscription.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"

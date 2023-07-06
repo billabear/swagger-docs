@@ -30,7 +30,7 @@ post:
               format: uuid
               description: The ID for the price to be used
   responses:
-    '201':
+    '202':
         $ref: "../../schemas/Subscription.yaml"
     default:
         $ref : "../../responses/UnexpectedError.yaml"
