@@ -1,6 +1,6 @@
 post:
   summary: Change Subscription Plan
-  operationId: customerChangeSubscriptionPlan
+  operationId: v1CustomerChangeSubscriptionPlan
   description: Change the subscription plan for a customer
   tags:
   - Subscriptions
@@ -20,7 +20,7 @@ post:
             when:
               type: string
               example: instantly
-              choices: ['instantly', 'next-cycle']
+              enum: ['instantly', 'next-cycle']
             subscription_plan:
               type: string
               format: uuid

@@ -1,6 +1,6 @@
 post:
   summary: Start Subscription For Customer
-  operationId: c1CustomerStartSubscription
+  operationId: v1CustomerStartSubscription
   description: Start subscription for a customer
   tags:
   - Subscriptions
