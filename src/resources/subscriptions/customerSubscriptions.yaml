@@ -1,5 +1,5 @@
 get:
-  summary: List
+  summary: List Customer Subscriptions
   operationId: v1ListCustomnerSubscriptions
   description: "List all customer subscriptions<br><br><strong>Since 1.1</strong>"
   tags:
