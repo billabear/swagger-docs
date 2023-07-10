@@ -1,0 +1,28 @@
+get:
+  summary: List Customer's Payment Details
+  operationId: v1ListPaymentDetails
+  description: "List all customers\n<br><br>Added in version 1.1"
+  tags:
+  - Customers
+  - PaymentDetails
+  responses:
+    '200':
+      description: A paged array of payment details
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/PaymentDetails.yaml"
+              has_more:
+                type: boolean
+              last_key:
+                type: string
+                format: uuid      
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"

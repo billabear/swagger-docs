@@ -40,6 +40,8 @@ paths:
     $ref: "./resources/paymentDetails/makeDefault.yaml"
   /customer/{customerId}/subscription/start:
     $ref: "./resources/subscriptions/customerStart.yaml"
+  /customer/{customerId}/subscription:
+    $ref: "./resources/subscriptions/customerSubscriptions.yaml"
   /payment:
     $ref: "./resources/payments/list.yaml"  
   /payment/{paymentId}/refund:
