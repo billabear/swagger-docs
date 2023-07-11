@@ -12,7 +12,7 @@ properties:
     type: string
     example: 'GB459324'
     nullable: true
-    description: "The taxt number for the customer <strong>Since 1.1</strong>"
+    description: "The tax number for the customer <strong>Since 1.1</strong>"
   billing_type:
     type: string
     example: 'card'
