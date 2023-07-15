@@ -13,6 +13,16 @@ properties:
     example: 'GB459324'
     nullable: true
     description: "The tax number for the customer <strong>Since 1.1</strong>"
+  physical_tax_rate:
+    type: float
+    example: '15'
+    nullable: true
+    description: "The tax rate for the customer on physical products and services <strong>Since 1.1</strong>"
+  digital_tax_rate:
+    type: float
+    example: '19.5'
+    nullable: true
+    description: "The tax rate for the customer on digital products and services <strong>Since 1.1</strong>"
   billing_type:
     type: string
     example: 'card'
