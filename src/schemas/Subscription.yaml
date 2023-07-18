@@ -20,5 +20,5 @@ properties:
     type: string
   price:
     type: Price
-  subscription_plan:
+  plan:
     type: SubscriptionPlan
