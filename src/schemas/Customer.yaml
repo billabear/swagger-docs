@@ -29,6 +29,12 @@ properties:
     nullable: true
     choices: ['card', 'invoice']  
     description: "Choice between card and invoice"
+  type:
+    type: string
+    example: 'business'
+    nullable: true
+    choices: ['individual', 'business']  
+    description: "Choice between 'individual' and 'business'. When not provided 'individual' is used. <strong>Since 1.1</strong>"
   reference:
     type: string
     example: "internal-id"
