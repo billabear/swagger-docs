@@ -20,6 +20,13 @@ post:
                 type: integer
   responses:
     200:
-      $ref: "../../responses/SuccessResponse.yaml"
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
     default:
       $ref: "../../responses/UnexpectedError.yaml"

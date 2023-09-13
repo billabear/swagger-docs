@@ -4,6 +4,5 @@ content:
     schema:
       type: object
       properties:
-      data:
         success:
           type: boolean
