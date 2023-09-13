@@ -18,6 +18,7 @@ post:
             properties:
               seats:
                 type: integer
+                example: 2
   responses:
     200:
       description: Success
