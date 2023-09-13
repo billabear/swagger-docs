@@ -60,6 +60,8 @@ paths:
     $ref: "./resources/subscriptions/subscriptions.yaml"  
   /subscription/{subscriptionId}:
     $ref: "./resources/subscriptions/subscription.yaml"  
+  /subscription/{subscriptionId}/seats/add:
+    $ref: "./resources/subscriptions/seatsAdd.yaml"  
   /subscription/{subscriptionId}/cancel:
     $ref: "./resources/subscriptions/cancel.yaml"  
   /subscription/{subscriptionId}/plan:
