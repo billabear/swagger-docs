@@ -1,0 +1,39 @@
+get:
+  summary: Add Seats
+  operationId: v1AddSeatsSubscriptions
+  description: "Adds seats to a per seat subscription<br><br><strong>Since 1.1.4</strong>"
+  tags:
+  - Subscriptions
+  - Customers
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+            type: object
+            required:
+              - seats
+            properties:
+              seats:
+                type: integer
+  responses:
+    200:
+      description: A paged array of subscriptions
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/Subscription.yaml"
+              has_more:
+                type: boolean
+              last_key:
+                type: string
+                format: uuid      
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
