@@ -20,20 +20,6 @@ get:
                 type: integer
   responses:
     200:
-      description: A paged array of subscriptions
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: "../../schemas/Subscription.yaml"
-              has_more:
-                type: boolean
-              last_key:
-                type: string
-                format: uuid      
+      $ref: "../../responses/SuccessResponse.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"
