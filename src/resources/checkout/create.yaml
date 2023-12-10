@@ -55,7 +55,6 @@ post:
       content:
         application/json:
           schema:
-            type: object
             $ref: "../../schemas/Checkout.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"
