@@ -1,0 +1,55 @@
+post:
+  summary: Create Checkout
+  operationId: v1CreateCheckout
+  description: "Create checkout<br><br><strong>Since 2024.01</strong>"
+  tags:
+  - Checkout
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+            type: object
+            required:
+              - brand
+              - customer
+            properties:
+              name:
+                type: string
+              brand:
+                type: string
+              slug:
+                type: string
+              customer:
+                type: string
+              items:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    description:
+                      type: string
+                    amount:
+                      type: integer
+                    currency:
+                      type: string
+                    include_tax:
+                      type: boolean
+                    tax_type:
+                      type: string
+      
+
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
