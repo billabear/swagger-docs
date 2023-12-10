@@ -4,8 +4,6 @@ post:
   description: "Create checkout<br><br><strong>Since 2024.01</strong>"
   tags:
   - Checkout
-  parameters:
-    - $ref: "../../parameters/path/customerId.yaml"
   requestBody:
     required: true
     content:
@@ -39,17 +37,25 @@ post:
                       type: boolean
                     tax_type:
                       type: string
-      
-
+              subscriptions:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    plan:
+                      type: string
+                    price:
+                      type: string
+                    seat_number:
+                      type: integer
+                              
   responses:
-    200:
+    201:
       description: Success
       content:
         application/json:
           schema:
             type: object
-            properties:
-              success:
-                type: boolean
+            $ref: "../../schemas/Checkout.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"

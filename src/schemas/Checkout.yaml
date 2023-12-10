@@ -1,0 +1,42 @@
+type: object
+required:
+  - id
+properties:
+  id:
+    type: uuid
+  name:
+    type: string
+  currency:
+    type: string
+  customer:
+    $ref: "./Customer.yaml"
+  billing_admin:
+    $ref: "./BillingAdmin.yaml"
+  total:
+    type: integer
+  sub_total:
+    type: integer
+  tax_total:
+    type: integer
+  lines:
+    type: array
+    items:
+      type: object
+      properties:
+        subscription_plan:
+          $ref: "./SubscriptionPlan.yaml"
+        price:
+          $ref: "./Price.yaml"
+        description:
+          type: string
+        currency:
+          type: string    
+        seat_number:
+          type: integer
+        sub_total:
+          type: integer
+        tax_total:
+          type: integer
+        tax_rate:
+          type: number  
+                                  
