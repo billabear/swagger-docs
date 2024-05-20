@@ -28,7 +28,7 @@ paths:
     $ref: "./resources/customers/limits.yaml"
   /customer/{customerId}/refund:
     $ref: "./resources/customers/refund.yaml"
-  /customer/{paymentId}/payment:
+  /customer/{customerId}/payment:
     $ref: "./resources/customers/payment.yaml"  
   /customer/{customerId}/payment-methods/frontend-payment-token:
     $ref: "./resources/paymentDetails/frontendPaymentDetails.yaml"
