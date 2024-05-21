@@ -74,6 +74,8 @@ paths:
     $ref: "./resources/checkout/create.yaml"
   /invoice/{invoiceId}/charge:
     $ref: "./resources/invoices/charge.yaml"  
+  /invoice/{invoiceId}/download:
+    $ref: "./resources/invoices/download.yaml"  
 components:
   parameters:
     $ref: "./parameters/_index.yaml"

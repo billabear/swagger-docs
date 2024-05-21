@@ -1,0 +1,13 @@
+post:
+  summary: Download Invoice
+  operationId: v1DownloadInvoice
+  description: Returns the pdf blob for the invoice
+  tags:
+  - Payments
+  - Invoices
+  parameters:
+    - $ref: "../../parameters/path/invoiceId.yaml"
+  responses:
+        200:
+          content:
+            application/pdf: {}
