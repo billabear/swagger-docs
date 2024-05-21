@@ -1,0 +1,6 @@
+name: invoiceId
+in: path
+required: true
+description: The id of the invoice
+schema:
+  type: string
