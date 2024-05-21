@@ -72,6 +72,8 @@ paths:
     $ref: "./resources/subscriptions/subscriptionPlan.yaml"  
   /checkout:
     $ref: "./resources/checkout/create.yaml"
+  /invoice/{invoiceId}/charge:
+    $ref: "./resources/invoices/charge.yaml"  
 components:
   parameters:
     $ref: "./parameters/_index.yaml"
