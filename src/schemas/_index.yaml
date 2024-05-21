@@ -1,5 +1,5 @@
 Address:
-  $red: "./Address.yaml"  
+  $ref: "./Address.yaml"  
 Customer:
   $ref: "./Customer.yaml"
 Error:
@@ -7,7 +7,7 @@ Error:
 FrontendToken:
   $ref: "./FrontendToken.yaml"
 PaymentDetails:
-  $red: "./PaymentDetails.yaml"
+  $ref: "./PaymentDetails.yaml"
 Price:
   $ref: "./Price.yaml"
 Product:

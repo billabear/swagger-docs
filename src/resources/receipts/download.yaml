@@ -6,8 +6,9 @@ post:
   - Payments
   - Receipt
   parameters:
-    - $ref: "../../parameters/path/receiptId.yaml"
+  - $ref: "../../parameters/path/receiptId.yaml"
   responses:
         200:
+          description: "The receipt PDF"
           content:
             application/pdf: {}

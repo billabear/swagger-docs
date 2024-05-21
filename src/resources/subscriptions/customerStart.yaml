@@ -34,7 +34,10 @@ post:
 
   responses:
     '201':
-        $ref: "../../schemas/Subscription.yaml"
+      content:
+        application/json:
+          schema:
+           $ref: "../../schemas/Subscription.yaml"
     '404':
       $ref: "../../responses/NullResponse.yaml"
     '406':

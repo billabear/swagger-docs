@@ -5,6 +5,7 @@ get:
   tags:
   - Prices
   parameters:
+    - $ref: "../../parameters/path/productId.yaml"
     - $ref: "../../parameters/query/limit.yaml"
     - $ref: "../../parameters/query/last_key.yaml"
   responses:

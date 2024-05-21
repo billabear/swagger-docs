@@ -44,7 +44,10 @@ post:
           $ref: "../../schemas/Customer.yaml"
   responses:
     '201':
-        $ref: "../../schemas/Customer.yaml"
+      content:
+        application/json:
+          schema:
+           $ref: "../../schemas/Customer.yaml"
     '400':
       $ref: "../../responses/ValidationError.yaml"
     default:

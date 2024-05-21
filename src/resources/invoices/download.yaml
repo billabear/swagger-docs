@@ -9,5 +9,6 @@ post:
     - $ref: "../../parameters/path/invoiceId.yaml"
   responses:
         200:
+          description: The PDF
           content:
             application/pdf: {}
