@@ -33,6 +33,8 @@ post:
   description: Create a price
   tags:
   - Prices
+  parameters:
+    - $ref: "../../parameters/path/productId.yaml"
   requestBody:
     required: true
     content:

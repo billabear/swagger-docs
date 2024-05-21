@@ -33,7 +33,11 @@ post:
           $ref: "../../schemas/FrontendToken.yaml"
   responses:
     '201':
-        $ref: "../../schemas/PaymentDetails.yaml"
+      description: The payment details that were created
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/PaymentDetails.yaml"
     '404':
       $ref: "../../responses/NullResponse.yaml"
     default:

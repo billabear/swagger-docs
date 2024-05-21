@@ -5,6 +5,8 @@ get:
   tags:
   - Customers
   - PaymentDetails
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
   responses:
     '200':
       description: A paged array of payment details

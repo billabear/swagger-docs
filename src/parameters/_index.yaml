@@ -1,8 +1,20 @@
 # path
 customerId:
   $ref: './path/customerId.yaml'
+invoiceId:
+  $ref: './path/invoiceId.yaml'
+paymenDetailsId:
+  $ref: './path/paymentDetailsId.yaml'
+paymentId:
+  $ref: './path/paymentId.yaml'
 productId:
   $ref: './path/productId.yaml'
+receiptId:
+  $ref: './path/receiptId.yaml'
+refundId:
+  $ref: './path/refundId.yaml'
+subscriptionId:
+  $ref: './path/subscriptionId.yaml'
 
 # limit
 limit:
