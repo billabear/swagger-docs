@@ -34,11 +34,7 @@ post:
 
   responses:
     '202':
-      description: Expected response to a valid request
-      content:
-        application/json:
-          schema:
-            $ref: "../../responses/NullResponse.yaml"
+      $ref: "../../responses/NullResponse.yaml"
     '404':
       $ref: "../../responses/NullResponse.yaml"
     default:

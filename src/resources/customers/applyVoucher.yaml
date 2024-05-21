@@ -4,6 +4,8 @@ post:
   description: Apply Voucher to Customer
   tags:
   - Customers
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
   requestBody:
     required: true
     content:

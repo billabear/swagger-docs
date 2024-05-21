@@ -19,6 +19,7 @@ get:
                 items: {}
               features:
                 type: array
+                items: {}
               user_count:
                 type: int  
     '404':
