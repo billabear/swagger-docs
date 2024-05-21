@@ -44,6 +44,7 @@ post:
           $ref: "../../schemas/Customer.yaml"
   responses:
     '201':
+      description: "The customer that was just created"
       content:
         application/json:
           schema:

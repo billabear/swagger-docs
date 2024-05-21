@@ -25,6 +25,10 @@ put:
     - $ref: "../../parameters/path/productId.yaml"
   responses:
     '202':
-        $ref: "../../schemas/Product.yaml"
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/Product.yaml"
     default:
         $ref : "../../responses/UnexpectedError.yaml"
