@@ -1,0 +1,29 @@
+get:
+  summary: List Customer Invoices
+  operationId: v1ListCustomerInvoices
+  description: List Customer Invoices
+  tags:
+  - Invoices
+  - Payments
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    200:
+      description: A paged array of invoices
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/Invoice.yaml"
+              has_more:
+                type: boolean
+              last_key:
+                type: string
+                format: uuid      
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
+

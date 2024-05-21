@@ -30,6 +30,8 @@ paths:
     $ref: "./resources/customers/refund.yaml"
   /customer/{customerId}/payment:
     $ref: "./resources/customers/payment.yaml"  
+  /customer/{customerId}/invoices:
+    $ref: "./resources/customers/invoices.yaml"  
   /customer/{customerId}/payment-methods/frontend-payment-token:
     $ref: "./resources/paymentDetails/frontendPaymentDetails.yaml"
   /customer/{customerId}/payment-methods/{paymentDetailsId}:
