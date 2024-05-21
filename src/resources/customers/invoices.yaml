@@ -3,6 +3,7 @@ get:
   operationId: v1ListCustomerInvoices
   description: List Customer Invoices
   tags:
+  - Customers
   - Invoices
   - Payments
   parameters:
