@@ -21,3 +21,14 @@ properties:
     type: datetime  
   customer:
     $ref: "./Customer.yaml"
+  receipts:
+    type: array
+    items:
+      type: object
+      properties:
+          created_at:
+            type: datetime  
+          id:
+            type: string  
+          valid:
+            type: boolean
