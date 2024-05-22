@@ -1,6 +1,6 @@
 post:
   summary: Cancel Subscription
-  operationId: v1CancelSubscription
+  operationId: cancelSubscription
   description: Info for a specific subscription
   tags:
     - Subscriptions

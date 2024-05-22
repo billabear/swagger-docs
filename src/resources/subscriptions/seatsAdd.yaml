@@ -1,6 +1,6 @@
 post:
   summary: Add Seats
-  operationId: v1AddSeatsSubscriptions
+  operationId: addSeatsSubscriptions
   description: "Adds seats to a per seat subscription<br><br><strong>Since 1.1.4</strong>"
   tags:
   - Subscriptions

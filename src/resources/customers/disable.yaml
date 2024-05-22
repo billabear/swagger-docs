@@ -1,6 +1,6 @@
 post:
   summary: Disable Customer
-  operationId: v1DisableCustomer
+  operationId: disableCustomer
   description: Disable customer
   tags:
     - Customers

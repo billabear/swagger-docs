@@ -1,6 +1,6 @@
 get:
   summary: List Customer's Payment Details
-  operationId: v1ListPaymentDetails
+  operationId: listPaymentDetails
   description: "List all customers\n<br><br>Added in version 1.1"
   tags:
   - Customers

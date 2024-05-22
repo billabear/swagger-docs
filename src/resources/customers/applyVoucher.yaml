@@ -1,6 +1,6 @@
 post:
   summary: Apply voucher
-  operationId: applyVoucher
+  operationId: applyVoucherToCustomer
   description: Apply Voucher to Customer
   tags:
   - Customers

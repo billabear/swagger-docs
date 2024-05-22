@@ -1,6 +1,6 @@
 post:
   summary: Change Subscription Plan
-  operationId: v1CustomerChangeSubscriptionPlan
+  operationId: customerChangeSubscriptionPlan
   description: Change the subscription plan for a customer
   tags:
   - Subscriptions

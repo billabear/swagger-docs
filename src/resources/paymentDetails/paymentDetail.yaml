@@ -1,6 +1,6 @@
 delete:
   summary: Delete
-  operationId: v1DeletePaymentDetails
+  operationId: deletePaymentDetails
   description: Delete Payment Details
   tags:
   - PaymentDetails

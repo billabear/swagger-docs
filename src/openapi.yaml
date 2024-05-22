@@ -4,13 +4,19 @@ info:
   title: BillaBear
   description: The REST API provided by BillaBear
   license:
-    name: BUSL-1.1
+    name: FSL
   contact:
     name: API Support
     url: http://www.billabear.com/support
     email: support@billabear.com
 servers:
-  - url: http://demo.billabear.com/v1
+  - url: https://{customerId}.billabear.cloud/api/v1
+    variables:
+      customerId:
+        default: demo
+        description: Customer ID assigned by the service provider
+security:
+  - ApiKeyAuth: []        
 tags:
   - name: Billing
 paths:
@@ -79,6 +85,11 @@ paths:
   /receipt/{receiptId}/download:
     $ref: "./resources/receipts/download.yaml"  
 components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
   parameters:
     $ref: "./parameters/_index.yaml"
   schemas:

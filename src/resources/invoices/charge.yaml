@@ -1,6 +1,6 @@
 post:
   summary: Charge Invoice
-  operationId: v1ChargeInvoice
+  operationId: chargeInvoice
   description: Attempts to charge a card that is on file for the invoice amount
   tags:
   - Payments

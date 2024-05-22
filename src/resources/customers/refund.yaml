@@ -1,6 +1,6 @@
 get:
   summary: List Customer Refunds
-  operationId: v1ListCustomerRefund
+  operationId: listCustomerRefund
   description: List Customer Refund
   tags:
   - Customers

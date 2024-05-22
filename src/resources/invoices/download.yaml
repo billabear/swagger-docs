@@ -1,6 +1,6 @@
 post:
   summary: Download Invoice
-  operationId: v1DownloadInvoice
+  operationId: downloadInvoice
   description: Returns the pdf blob for the invoice
   tags:
   - Payments

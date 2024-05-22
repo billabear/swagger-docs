@@ -1,6 +1,6 @@
 get:
   summary: List Customer Invoices
-  operationId: v1ListCustomerInvoices
+  operationId: listCustomerInvoices
   description: List Customer Invoices
   tags:
   - Customers

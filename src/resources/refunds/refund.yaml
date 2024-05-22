@@ -1,6 +1,6 @@
 get:
   summary: Detail
-  operationId: v1ShowRefundById
+  operationId: showRefundById
   description: Info for a specific Refund
   tags:
     - Refunds

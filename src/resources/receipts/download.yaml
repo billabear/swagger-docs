@@ -1,6 +1,6 @@
 post:
   summary: Download Receipt
-  operationId: v1DownloadReceipt
+  operationId: downloadReceipt
   description: Returns the pdf blob for the Receipt
   tags:
   - Payments

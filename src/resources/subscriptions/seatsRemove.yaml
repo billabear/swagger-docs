@@ -1,6 +1,6 @@
 post:
   summary: Remove Seats
-  operationId: v1RemoveSeatsSubscriptions
+  operationId: removeSeatsSubscriptions
   description: "Remove seats to a per seat subscription<br><br><strong>Since 1.1.4</strong>"
   tags:
   - Subscriptions

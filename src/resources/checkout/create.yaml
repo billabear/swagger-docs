@@ -1,6 +1,6 @@
 post:
   summary: Create Checkout
-  operationId: v1CreateCheckout
+  operationId: createCheckout
   description: "Create checkout<br><br><strong>Since 2024.01</strong>"
   tags:
   - Checkout
