@@ -1,0 +1,28 @@
+get:
+  summary: List Subscription Plans
+  operationId: listSubscriptionPlans
+  description: List all subscriptions plans
+  tags:
+  - Subscriptions
+  parameters:
+    - $ref: "../../parameters/query/limit.yaml"
+    - $ref: "../../parameters/query/last_key.yaml"
+  responses:
+    200:
+      description: A paged array of subscriptions plans
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/SubscriptionPlan.yaml"
+              has_more:
+                type: boolean
+              last_key:
+                type: string
+                format: uuid      
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
