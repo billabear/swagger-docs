@@ -14,5 +14,5 @@ properties:
     nullable: true
   description:
     type: string
-    example: 'Send your emails glitter bombs'
+    example: 'Send your enemies glitter bombs'
     nullable: true
