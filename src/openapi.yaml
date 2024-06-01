@@ -66,6 +66,8 @@ paths:
     $ref: "./resources/products/prices.yaml"
   /subscription:
     $ref: "./resources/subscriptions/subscriptions.yaml"  
+  /subscription/plans:
+    $ref: "./resources/subscriptions/plans.yaml"  
   /subscription/{subscriptionId}:
     $ref: "./resources/subscriptions/subscription.yaml"  
   /subscription/{subscriptionId}/seats/add:

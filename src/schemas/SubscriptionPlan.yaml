@@ -6,3 +6,33 @@ properties:
   name:
     type: string
     example: "Plany McPlanFace"
+  code_name:
+    type: string
+    example: "mcplanface"
+  user_count:
+    type: int
+    example: 10
+  per_seat:
+    type: boolean
+    example: false  
+  has_trial:
+    type: boolean
+    example: true
+  free:
+    type: boolean
+    example: false
+  public:
+    type: boolean
+    example: true  
+  limits:
+    type: array
+    items: {}
+  features:
+    type: array
+    items: {}
+  product:
+    type: Product  
+  prices:
+    type: array
+    items:
+       $ref: "./Price.yaml"      

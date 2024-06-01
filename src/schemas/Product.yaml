@@ -16,7 +16,3 @@ properties:
     example: 'digital_goods'
     nullable: true
     description: "The tax type for the product <strong>Since 1.1</strong>"
-  prices:
-    type: array
-    items:
-       $ref: "./Price.yaml"
