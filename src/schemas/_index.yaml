@@ -18,5 +18,5 @@ SubscriptionPlan:
   $ref: "./SubscriptionPlan.yaml"
 Feature:
   $ref: "./Feature.yaml"
-Feature:
+Limit:
   $ref: "./Limit.yaml"
