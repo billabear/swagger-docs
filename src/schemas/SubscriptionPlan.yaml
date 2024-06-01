@@ -26,10 +26,12 @@ properties:
     example: true  
   limits:
     type: array
-    items: {}
+    items:
+       $ref: "./Limit.yaml"    
   features:
     type: array
-    items: {}
+    items:
+       $ref: "./Feature.yaml"    
   product:
     type: Product  
   prices:

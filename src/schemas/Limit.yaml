@@ -1,0 +1,9 @@
+type: object
+required:
+  - name
+properties:
+  feature:
+    type: Feature
+  limit:
+    type: int
+    example: 30
