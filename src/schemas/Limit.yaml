@@ -3,7 +3,7 @@ required:
   - name
 properties:
   feature:
-    type: Feature
+    $ref: "./Feature.yaml"
   limit:
     type: int
     example: 30
