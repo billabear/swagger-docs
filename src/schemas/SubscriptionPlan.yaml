@@ -10,7 +10,7 @@ properties:
     type: string
     example: "mcplanface"
   user_count:
-    type: int
+    type: integer
     example: 10
   per_seat:
     type: boolean
