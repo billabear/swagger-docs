@@ -5,5 +5,5 @@ properties:
   feature:
     $ref: "./Feature.yaml"
   limit:
-    type: int
+    type: integer
     example: 30

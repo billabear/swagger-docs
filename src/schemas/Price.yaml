@@ -23,7 +23,7 @@ properties:
     example: false
   schedule:
     type: string
-    enum: [week, month, year]
+    enum: [week, month, year, one-off]
     nullable: true
     description: Required if recurring is true
   including_tax:

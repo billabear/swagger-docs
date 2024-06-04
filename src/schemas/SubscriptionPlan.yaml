@@ -33,8 +33,11 @@ properties:
     items:
        $ref: "./Feature.yaml"    
   product:
-    type: Product  
+    $ref: "./Product.yaml"    
   prices:
     type: array
     items:
-       $ref: "./Price.yaml"      
+       $ref: "./Price.yaml"  
+  trial_length_days:
+    type: integer
+    nullable: true    
