@@ -31,7 +31,7 @@ post:
               type: string
               enum: [week, month, year, one-off]
               description: The schedule of the plan that is to be started. Only used if price isn't given. Requires currency as well.
-            schedule:
+            currency:
               type: string
               description: The currency of the plan that is to be started. Only used if price isn't given. Requires schedule as well.
             seat_numbrers: 

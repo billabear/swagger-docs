@@ -12,6 +12,7 @@ post:
         $ref : "../../responses/PaymentResponse.yaml"
     '402':
         $ref : "../../responses/PaymentResponse.yaml"
+        description: "Payment failed"
     '404':     
         $ref : "../../responses/NullResponse.yaml"
     default:
