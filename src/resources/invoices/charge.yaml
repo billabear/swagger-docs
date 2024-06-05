@@ -9,7 +9,9 @@ post:
     - $ref: "../../parameters/path/invoiceId.yaml"
   responses:
     '200':
-        $ref : "../../responses/SuccessResponse.yaml"
+        $ref : "../../responses/PaymentResponse.yaml"
+    '402':
+        $ref : "../../responses/PaymentResponse.yaml"
     '404':     
         $ref : "../../responses/NullResponse.yaml"
     default:
