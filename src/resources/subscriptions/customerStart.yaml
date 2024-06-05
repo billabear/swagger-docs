@@ -50,7 +50,7 @@ post:
     '406':
         description: Customer has no payment details to be used
     '402':
-        description: Payment failed   
         $ref : "../../responses/PaymentResponse.yaml"
+        description: Payment failed   
     default:
         $ref : "../../responses/UnexpectedError.yaml"
