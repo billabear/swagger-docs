@@ -1,0 +1,11 @@
+description: Payment response
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        paid:
+          type: boolean
+        failure_reason:
+          type: string
+          nullable: true

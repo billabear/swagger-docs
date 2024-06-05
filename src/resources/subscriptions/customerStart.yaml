@@ -52,4 +52,6 @@ post:
     '402':
         description: Payment failed   
     default:
+        $ref : "../../responses/PaymentResponse.yaml"
+    default:
         $ref : "../../responses/UnexpectedError.yaml"
