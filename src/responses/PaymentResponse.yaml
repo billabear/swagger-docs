@@ -9,3 +9,4 @@ content:
         failure_reason:
           type: string
           nullable: true
+          enum: [expired_card, invalid_details, fraud, authentication_required, invalid_card, general_decline, contact_provider, lack_of_funds]
