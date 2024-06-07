@@ -4,19 +4,20 @@ properties:
     type: string
     format: uuid
   seat_number:
-    type: int
+    type: integer
     example: 1  
   schedule:
     type: string
     example: "month"
   created_at:
-    type: datetime
+    type: string
   updated_at:
-    type: datetime
+    type: string
   ended_at:
-    type: datetime
+    type: string
+    format: datetime
   valid_until:
-    type: datetime        
+    type: string        
   main_external_reference:
     type: string
   child_external_reference:
