@@ -13,3 +13,22 @@ delete:
       $ref: "../../responses/NullResponse.yaml"
     default:
         $ref : "../../responses/UnexpectedError.yaml"
+get:
+  summary: Fetch
+  operationId: getPaymentDetails
+  description: Fetch the payment cards
+  tags:
+  - PaymentDetails
+  parameters:
+    - $ref: "../../parameters/path/paymentDetailsId.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/PaymentDetails.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"
