@@ -22,6 +22,6 @@ properties:
   child_external_reference:
     type: string
   price:
-    type: Price
+    $ref: "./Price.yaml"    
   plan:
-    type: SubscriptionPlan
+    $ref: "./SubscriptionPlan.yaml"    
