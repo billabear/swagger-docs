@@ -5,7 +5,6 @@ delete:
   tags:
   - PaymentDetails
   parameters:
-    - $ref: "../../parameters/path/customerId.yaml"
     - $ref: "../../parameters/path/paymentDetailsId.yaml"
   responses:
     '202':

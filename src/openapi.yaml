@@ -47,6 +47,8 @@ paths:
   /customer/{customerId}/payment-methods:
     $ref: "./resources/paymentDetails/paymentDetails.yaml"  
   /customer/{customerId}/payment-methods/{paymentDetailsId}/default:
+    $ref: "./resources/paymentDetails/makeDefaultCustomer.yaml"
+  /payment-methods/{paymentDetailsId}/default:
     $ref: "./resources/paymentDetails/makeDefault.yaml"
   /customer/{customerId}/subscription/start:
     $ref: "./resources/subscriptions/customerStart.yaml"
