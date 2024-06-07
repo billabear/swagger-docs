@@ -3,6 +3,9 @@ properties:
   id:
     type: string
     format: uuid
+  seat_number:
+    type: int
+    example: 1  
   schedule:
     type: string
     example: "month"
