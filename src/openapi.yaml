@@ -41,6 +41,8 @@ paths:
   /customer/{customerId}/payment-methods/frontend-payment-token:
     $ref: "./resources/paymentDetails/frontendPaymentDetails.yaml"
   /customer/{customerId}/payment-methods/{paymentDetailsId}:
+    $ref: "./resources/paymentDetails/paymentDetailCustomer.yaml"    
+  /payment-methods/{paymentDetailsId}:
     $ref: "./resources/paymentDetails/paymentDetail.yaml"    
   /customer/{customerId}/payment-methods:
     $ref: "./resources/paymentDetails/paymentDetails.yaml"  
