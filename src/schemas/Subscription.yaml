@@ -15,7 +15,6 @@ properties:
     type: string
   ended_at:
     type: string
-    format: datetime
   valid_until:
     type: string        
   main_external_reference:
