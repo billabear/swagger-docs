@@ -1,6 +1,6 @@
 get:
   summary: List Customer Subscriptions
-  operationId: listCustomnerSubscriptions
+  operationId: getForCustomer
   description: "List all customer subscriptions<br><br><strong>Since 1.1</strong>"
   tags:
   - Subscriptions
