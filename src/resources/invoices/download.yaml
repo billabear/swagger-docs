@@ -11,4 +11,7 @@ post:
         200:
           description: The PDF
           content:
-            application/pdf: {}
+            application/pdf: 
+              schema:
+                type: string
+                format: binary

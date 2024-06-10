@@ -29,11 +29,11 @@ properties:
   paid_at:
     type: string        
   due_date:
-    type: string  
+    type: datetime  
   biller_address:
-    type: Address
+    $ref: "./Address.yaml"
   payeeaddress:
-    type: Address
+    $ref: "./Address.yaml"
   lines:
     type: array
     items:

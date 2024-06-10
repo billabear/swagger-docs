@@ -41,7 +41,7 @@ properties:
   external_reference:
     type: string
   address:
-    type: Address
+    $ref: "./Address.yaml"
   locale:
     type: string
     nullable: true
