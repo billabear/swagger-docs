@@ -19,7 +19,7 @@ properties:
     type: integer
   amount_due:
     type: integer
-  is_paid:
+  paid:
     type: boolean
   pay_link:
     type: string
@@ -29,7 +29,7 @@ properties:
   paid_at:
     type: string        
   due_date:
-    type: datetime  
+    type: string  
   biller_address:
     $ref: "./Address.yaml"
   payeeaddress:

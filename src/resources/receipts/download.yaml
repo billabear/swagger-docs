@@ -1,4 +1,4 @@
-post:
+get:
   summary: Download Receipt
   operationId: downloadReceipt
   description: Returns the pdf blob for the Receipt
