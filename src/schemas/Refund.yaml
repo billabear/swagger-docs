@@ -22,7 +22,7 @@ properties:
     type: string
     enum: [started, rejected, authorised, issued]  
   created_at:
-    type: datetime  
+    type: string  
   payment:
     $ref: "./Payment.yaml"
   customer:

@@ -25,11 +25,11 @@ properties:
     type: string
     example: 'https://demo.billabear.com/paylink'
   created_at:
-    type: datetime        
+    type: string        
   paid_at:
-    type: datetime        
+    type: string        
   due_date:
-    type: datetime  
+    type: string  
   biller_address:
     type: Address
   payeeaddress:
