@@ -1,0 +1,35 @@
+post:
+  summary: Change Price
+  operationId: changeSubscriptionPrice
+  description: "Changes the price being used for a price. Useful for changing pricing schedule or just price."
+  tags:
+  - Subscriptions
+  parameters:
+    - $ref: "../../parameters/path/subscriptionId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+            type: object
+            required:
+              - price
+              - when
+            properties:
+              price:
+                type: uuid
+              when:
+                type: string
+                enum: ['next_cycle', 'instantly']  
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
