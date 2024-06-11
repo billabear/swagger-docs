@@ -25,6 +25,12 @@ put:
   - Customers
   parameters:
     - $ref: "../../parameters/path/customerId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/Customer.yaml"  
   responses:
     '202':
       description: "The customer that has been updated"
