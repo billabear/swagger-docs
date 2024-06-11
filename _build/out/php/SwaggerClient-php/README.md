@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 *RefundsApi* | [**showRefundById**](docs/Api/RefundsApi.md#showrefundbyid) | **GET** /refund/{refundId} | Detail
 *SubscriptionsApi* | [**addSeatsSubscriptions**](docs/Api/SubscriptionsApi.md#addseatssubscriptions) | **POST** /subscription/{subscriptionId}/seats/add | Add Seats
 *SubscriptionsApi* | [**cancelSubscription**](docs/Api/SubscriptionsApi.md#cancelsubscription) | **POST** /subscription/{subscriptionId}/cancel | Cancel Subscription
+*SubscriptionsApi* | [**changeSubscriptionPrice**](docs/Api/SubscriptionsApi.md#changesubscriptionprice) | **POST** /subscription/{subscriptionId}/price | Change Price
 *SubscriptionsApi* | [**customerChangeSubscriptionPlan**](docs/Api/SubscriptionsApi.md#customerchangesubscriptionplan) | **POST** /subscription/{subscriptionId}/plan | Change Subscription Plan
 *SubscriptionsApi* | [**customerStartSubscription**](docs/Api/SubscriptionsApi.md#customerstartsubscription) | **POST** /customer/{customerId}/subscription/start | Start Subscription For Customer
 *SubscriptionsApi* | [**getForCustomer**](docs/Api/SubscriptionsApi.md#getforcustomer) | **GET** /customer/{customerId}/subscription | List Customer Subscriptions
@@ -183,6 +184,7 @@ Class | Method | HTTP request | Description
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionIdCancelBody](docs/Model/SubscriptionIdCancelBody.md)
  - [SubscriptionIdPlanBody](docs/Model/SubscriptionIdPlanBody.md)
+ - [SubscriptionIdPriceBody](docs/Model/SubscriptionIdPriceBody.md)
  - [SubscriptionPlan](docs/Model/SubscriptionPlan.md)
  - [SubscriptionStartBody](docs/Model/SubscriptionStartBody.md)
 

@@ -82,6 +82,8 @@ paths:
     $ref: "./resources/subscriptions/cancel.yaml"  
   /subscription/{subscriptionId}/plan:
     $ref: "./resources/subscriptions/subscriptionPlan.yaml"  
+  /subscription/{subscriptionId}/price:
+    $ref: "./resources/subscriptions/changePrice.yaml"  
   /checkout:
     $ref: "./resources/checkout/create.yaml"
   /invoice/{invoiceId}/charge:
