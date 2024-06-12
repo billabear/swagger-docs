@@ -6,7 +6,7 @@ post:
   - Subscriptions
   - Customers
   parameters:
-    - $ref: "../../parameters/path/customerId.yaml"
+    - $ref: "../../parameters/path/subscriptionId.yaml"
   requestBody:
     required: true
     content:
