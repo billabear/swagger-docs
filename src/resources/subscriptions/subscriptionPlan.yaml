@@ -21,7 +21,7 @@ post:
               type: string
               example: instantly
               enum: ['instantly', 'next-cycle']
-            subscription_plan:
+            plan:
               type: string
               format: uuid
               description: The ID for the subscription plan to be used
