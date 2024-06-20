@@ -18,6 +18,9 @@ properties:
   has_trial:
     type: boolean
     example: true
+  is_trial_standalone:
+    type: boolean
+    example: true
   free:
     type: boolean
     example: false
