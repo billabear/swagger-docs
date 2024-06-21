@@ -1,4 +1,4 @@
 .idea
 node_modules
 _build/openapi.yaml
-_build/out/
+_build/out
