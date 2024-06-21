@@ -1,0 +1,28 @@
+post:
+  summary: Extend Trial Subscription
+  operationId: extendTrial
+  description: "Extend a trial subscription so it's converted from a trial to a normal subscription."
+  tags:
+  - Subscriptions
+  parameters:
+    - $ref: "../../parameters/path/subscriptionId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+            type: object
+            required:
+              - price
+            properties:
+              price:
+                type: uuid
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/Subscription.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"

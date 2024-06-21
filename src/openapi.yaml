@@ -82,6 +82,8 @@ paths:
     $ref: "./resources/subscriptions/seatsRemove.yaml"  
   /subscription/{subscriptionId}/cancel:
     $ref: "./resources/subscriptions/cancel.yaml"  
+  /subscription/{subscriptionId}/extend:
+    $ref: "./resources/subscriptions/extend.yaml"  
   /subscription/{subscriptionId}/plan:
     $ref: "./resources/subscriptions/subscriptionPlan.yaml"  
   /subscription/{subscriptionId}/price:
