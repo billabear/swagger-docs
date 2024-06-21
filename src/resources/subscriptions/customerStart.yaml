@@ -18,11 +18,14 @@ post:
             subscription_plan:
               type: string
               format: uuid
-              description: The ID for the subscription plan to be used
+              description: The ID for the subscription plan to be used (Can also be the code name)
             payment_details:
               type: string
               format: uuid
               description: The Id for the customer's payment details to be used
+            card_token:
+              type: string
+              description: A stripe card token that's been created using Stripe's js sdk. It'll create the payment details for the customer.  
             price:
               type: string
               format: uuid
@@ -37,7 +40,7 @@ post:
             seat_numbrers: 
               type: integer
               example: 1
-
+               
   responses:
     '201':
       description: "The subscription that has been started"
@@ -48,7 +51,7 @@ post:
     '404':
       $ref: "../../responses/NullResponse.yaml"
     '406':
-        description: Customer has no payment details to be used
+        description: Customer has no payment details to be use
     '402':
         $ref : "../../responses/PaymentResponse.yaml"
         description: Payment failed   

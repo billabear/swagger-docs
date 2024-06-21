@@ -52,6 +52,8 @@ paths:
     $ref: "./resources/paymentDetails/makeDefault.yaml"
   /customer/{customerId}/subscription/start:
     $ref: "./resources/subscriptions/customerStart.yaml"
+  /customer/{customerId}/subscription/trial:
+    $ref: "./resources/subscriptions/customerStartTrial.yaml"
   /customer/{customerId}/subscription:
     $ref: "./resources/subscriptions/customerSubscriptions.yaml"
   /payment:
