@@ -58,6 +58,7 @@ class SubscriptionStartBody implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'subscription_plan' => 'string',
         'payment_details' => 'string',
+        'card_token' => 'string',
         'price' => 'string',
         'schedule' => 'string',
         'currency' => 'string',
@@ -72,6 +73,7 @@ class SubscriptionStartBody implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'subscription_plan' => 'uuid',
         'payment_details' => 'uuid',
+        'card_token' => null,
         'price' => 'uuid',
         'schedule' => null,
         'currency' => null,
@@ -107,6 +109,7 @@ class SubscriptionStartBody implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'subscription_plan' => 'subscription_plan',
         'payment_details' => 'payment_details',
+        'card_token' => 'card_token',
         'price' => 'price',
         'schedule' => 'schedule',
         'currency' => 'currency',
@@ -121,6 +124,7 @@ class SubscriptionStartBody implements ModelInterface, ArrayAccess
     protected static $setters = [
         'subscription_plan' => 'setSubscriptionPlan',
         'payment_details' => 'setPaymentDetails',
+        'card_token' => 'setCardToken',
         'price' => 'setPrice',
         'schedule' => 'setSchedule',
         'currency' => 'setCurrency',
@@ -135,6 +139,7 @@ class SubscriptionStartBody implements ModelInterface, ArrayAccess
     protected static $getters = [
         'subscription_plan' => 'getSubscriptionPlan',
         'payment_details' => 'getPaymentDetails',
+        'card_token' => 'getCardToken',
         'price' => 'getPrice',
         'schedule' => 'getSchedule',
         'currency' => 'getCurrency',
@@ -219,6 +224,7 @@ class SubscriptionStartBody implements ModelInterface, ArrayAccess
     {
         $this->container['subscription_plan'] = isset($data['subscription_plan']) ? $data['subscription_plan'] : null;
         $this->container['payment_details'] = isset($data['payment_details']) ? $data['payment_details'] : null;
+        $this->container['card_token'] = isset($data['card_token']) ? $data['card_token'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
@@ -273,7 +279,7 @@ class SubscriptionStartBody implements ModelInterface, ArrayAccess
     /**
      * Sets subscription_plan
      *
-     * @param string $subscription_plan The ID for the subscription plan to be used
+     * @param string $subscription_plan The ID for the subscription plan to be used (Can also be the code name)
      *
      * @return $this
      */
@@ -304,6 +310,30 @@ class SubscriptionStartBody implements ModelInterface, ArrayAccess
     public function setPaymentDetails($payment_details)
     {
         $this->container['payment_details'] = $payment_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets card_token
+     *
+     * @return string
+     */
+    public function getCardToken()
+    {
+        return $this->container['card_token'];
+    }
+
+    /**
+     * Sets card_token
+     *
+     * @param string $card_token A stripe card token that's been created using Stripe's js sdk. It'll create the payment details for the customer.
+     *
+     * @return $this
+     */
+    public function setCardToken($card_token)
+    {
+        $this->container['card_token'] = $card_token;
 
         return $this;
     }

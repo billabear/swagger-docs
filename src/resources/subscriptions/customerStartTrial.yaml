@@ -19,6 +19,9 @@ post:
               type: string
               format: uuid
               description: The ID for the subscription plan to be used (Can also be the code name)
+            card_token:
+              type: string
+              description: A stripe card token that's been created using Stripe's js sdk. It'll create the payment details for the customer.  
             seat_numbrers: 
               type: integer
               example: 1
@@ -37,10 +40,5 @@ post:
            $ref: "../../schemas/Subscription.yaml"
     '404':
       $ref: "../../responses/NullResponse.yaml"
-    '406':
-        description: Customer has no payment details to be used
-    '402':
-        $ref : "../../responses/PaymentResponse.yaml"
-        description: Payment failed   
     default:
         $ref : "../../responses/UnexpectedError.yaml"

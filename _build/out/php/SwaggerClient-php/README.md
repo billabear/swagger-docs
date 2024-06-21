@@ -134,11 +134,13 @@ Class | Method | HTTP request | Description
 *SubscriptionsApi* | [**changeSubscriptionPrice**](docs/Api/SubscriptionsApi.md#changesubscriptionprice) | **POST** /subscription/{subscriptionId}/price | Change Price
 *SubscriptionsApi* | [**customerChangeSubscriptionPlan**](docs/Api/SubscriptionsApi.md#customerchangesubscriptionplan) | **POST** /subscription/{subscriptionId}/plan | Change Subscription Plan
 *SubscriptionsApi* | [**customerStartSubscription**](docs/Api/SubscriptionsApi.md#customerstartsubscription) | **POST** /customer/{customerId}/subscription/start | Start Subscription For Customer
+*SubscriptionsApi* | [**extendTrial**](docs/Api/SubscriptionsApi.md#extendtrial) | **POST** /subscription/{subscriptionId}/extend | Extend Trial Subscription
 *SubscriptionsApi* | [**getForCustomer**](docs/Api/SubscriptionsApi.md#getforcustomer) | **GET** /customer/{customerId}/subscription | List Customer Subscriptions
 *SubscriptionsApi* | [**listSubscriptionPlans**](docs/Api/SubscriptionsApi.md#listsubscriptionplans) | **GET** /subscription/plans | List Subscription Plans
 *SubscriptionsApi* | [**listSubscriptions**](docs/Api/SubscriptionsApi.md#listsubscriptions) | **GET** /subscription | List
 *SubscriptionsApi* | [**removeSeatsSubscriptions**](docs/Api/SubscriptionsApi.md#removeseatssubscriptions) | **POST** /subscription/{subscriptionId}/seats/remove | Remove Seats
 *SubscriptionsApi* | [**showSubscriptionById**](docs/Api/SubscriptionsApi.md#showsubscriptionbyid) | **GET** /subscription/{subscriptionId} | Detail
+*SubscriptionsApi* | [**startTrial**](docs/Api/SubscriptionsApi.md#starttrial) | **POST** /customer/{customerId}/subscription/trial | Start Trial Subscription For Customer
 
 ## Documentation For Models
 
@@ -183,10 +185,12 @@ Class | Method | HTTP request | Description
  - [SeatsRemoveBody](docs/Model/SeatsRemoveBody.md)
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionIdCancelBody](docs/Model/SubscriptionIdCancelBody.md)
+ - [SubscriptionIdExtendBody](docs/Model/SubscriptionIdExtendBody.md)
  - [SubscriptionIdPlanBody](docs/Model/SubscriptionIdPlanBody.md)
  - [SubscriptionIdPriceBody](docs/Model/SubscriptionIdPriceBody.md)
  - [SubscriptionPlan](docs/Model/SubscriptionPlan.md)
  - [SubscriptionStartBody](docs/Model/SubscriptionStartBody.md)
+ - [SubscriptionTrialBody](docs/Model/SubscriptionTrialBody.md)
 
 ## Documentation For Authorization
 
