@@ -9,6 +9,8 @@ properties:
   schedule:
     type: string
     example: "month"
+  status:
+    type: string
   created_at:
     type: string
   updated_at:
