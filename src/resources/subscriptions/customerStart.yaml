@@ -1,7 +1,7 @@
 post:
-  summary: Start Subscription For Customer
-  operationId: startSubscription
-  description: Start subscription for a customer
+  summary: Create Subscription
+  operationId: createSubscription
+  description: Create subscription for a customer
   tags:
   - Subscriptions
   parameters:
