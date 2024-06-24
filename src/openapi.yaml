@@ -56,6 +56,8 @@ paths:
     $ref: "./resources/subscriptions/customerStartTrial.yaml"
   /customer/{customerId}/subscription:
     $ref: "./resources/subscriptions/customerSubscriptions.yaml"
+  /customer/{customerId}/subscription/active:
+    $ref: "./resources/subscriptions/customerSubscriptionsActive.yaml"
   /payment:
     $ref: "./resources/payments/list.yaml"  
   /payment/{paymentId}/refund:
