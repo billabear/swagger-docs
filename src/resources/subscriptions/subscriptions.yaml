@@ -1,6 +1,6 @@
 get:
   summary: List
-  operationId: v1ListSubscriptions
+  operationId: listSubscriptions
   description: List all subscriptions
   tags:
   - Subscriptions

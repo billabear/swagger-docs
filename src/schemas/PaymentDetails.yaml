@@ -25,4 +25,4 @@ properties:
     example: 26
   created_at:
     type: string
-    format: datetime
+    format: string

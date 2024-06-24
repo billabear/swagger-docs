@@ -3,22 +3,27 @@ properties:
   id:
     type: string
     format: uuid
+  seat_number:
+    type: integer
+    example: 1  
   schedule:
     type: string
     example: "month"
+  status:
+    type: string
   created_at:
-    type: datetime
+    type: string
   updated_at:
-    type: datetime
+    type: string
   ended_at:
-    type: datetime
+    type: string
   valid_until:
-    type: datetime        
+    type: string        
   main_external_reference:
     type: string
   child_external_reference:
     type: string
   price:
-    type: Price
+    $ref: "./Price.yaml"    
   plan:
-    type: SubscriptionPlan
+    $ref: "./SubscriptionPlan.yaml"    

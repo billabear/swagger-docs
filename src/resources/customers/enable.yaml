@@ -1,17 +1,13 @@
 post:
   summary: Enable Customer
-  operationId: v1EnableCustomer
+  operationId: enableCustomer
   description: Enable a customer
   tags:
     - Customers
   parameters:
     - $ref: "../../parameters/path/customerId.yaml"
   responses:
-    '202':
-      description: Expected response to a valid request
-      content:
-        application/json:
-          schema:
-            $ref: "../../responses/NullResponse.yaml"
+    '202':    
+      $ref: "../../responses/NullResponse.yaml"
     default:
       $ref: "../../responses/UnexpectedError.yaml"

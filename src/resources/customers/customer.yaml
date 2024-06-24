@@ -1,6 +1,6 @@
 get:
   summary: Detail
-  operationId: v1ShowCustomerById
+  operationId: fetchCustomerById
   description: Info for a specific customer
   tags:
     - Customers
@@ -19,16 +19,26 @@ get:
       $ref: "../../responses/UnexpectedError.yaml"
 put:
   summary: Update
-  operationId: v1UpdateCustomer
+  operationId: updateCustomer
   description: Update a customer
   tags:
   - Customers
   parameters:
     - $ref: "../../parameters/path/customerId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/Customer.yaml"  
   responses:
     '202':
-        $ref: "../../schemas/Customer.yaml"
+      description: "The customer that has been updated"
+      content:
+        application/json:
+          schema:
+           $ref: "../../schemas/Customer.yaml"
     '400':
       $ref: "../../responses/ValidationError.yaml"
     default:
-        $ref : "../../responses/UnexpectedError.yaml"
+      $ref : "../../responses/UnexpectedError.yaml"

@@ -1,0 +1,9 @@
+type: object
+required:
+  - name
+properties:
+  feature:
+    $ref: "./Feature.yaml"
+  limit:
+    type: integer
+    example: 30

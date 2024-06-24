@@ -1,0 +1,17 @@
+get:
+  summary: Download Receipt
+  operationId: downloadReceipt
+  description: Returns the pdf blob for the Receipt
+  tags:
+  - Payments
+  - Receipt
+  parameters:
+  - $ref: "../../parameters/path/receiptId.yaml"
+  responses:
+        200:
+          description: "The receipt PDF"
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary

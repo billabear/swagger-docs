@@ -1,6 +1,6 @@
 get:
   summary: Start Frontend Detail Collection
-  operationId: v1StartFrontendPaymentDetails
+  operationId: startFrontendPaymentDetails
   description: Start frontend payment details
   tags:
   - PaymentDetails
@@ -19,7 +19,7 @@ get:
       $ref: "../../responses/UnexpectedError.yaml"
 post:
   summary: Complete Frontend Detail Collection
-  operationId: v1CompleteFrontendPaymentDetails
+  operationId: completeFrontendPaymentDetails
   description: Complete frontend payment details
   tags:
   - PaymentDetails
@@ -33,7 +33,11 @@ post:
           $ref: "../../schemas/FrontendToken.yaml"
   responses:
     '201':
-        $ref: "../../schemas/PaymentDetails.yaml"
+      description: The payment details that were created
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/PaymentDetails.yaml"
     '404':
       $ref: "../../responses/NullResponse.yaml"
     default:

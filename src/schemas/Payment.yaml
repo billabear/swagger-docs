@@ -18,6 +18,17 @@ properties:
     type: string
     enum: [pending, completed, disputed, partially_refunded, fully_refunded]  
   created_at:
-    type: datetime  
+    type: string  
   customer:
     $ref: "./Customer.yaml"
+  receipts:
+    type: array
+    items:
+      type: object
+      properties:
+          created_at:
+            type: string  
+          id:
+            type: string  
+          valid:
+            type: boolean

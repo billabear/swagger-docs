@@ -1,0 +1,53 @@
+type: object
+required:
+  - email
+properties:
+  id:
+    type: string
+    format: uuid
+  number:
+    type: string
+    example: 1023045  
+  currency:
+    type: string
+    example: 'USD'
+  customer:
+    $ref: "./Customer.yaml"
+  tax_total:
+    type: integer
+  sub_total:
+    type: integer
+  amount_due:
+    type: integer
+  paid:
+    type: boolean
+  pay_link:
+    type: string
+    example: 'https://demo.billabear.com/paylink'
+  created_at:
+    type: string        
+  paid_at:
+    type: string        
+  due_date:
+    type: string  
+  biller_address:
+    $ref: "./Address.yaml"
+  payeeaddress:
+    $ref: "./Address.yaml"
+  lines:
+    type: array
+    items:
+      type: object
+      properties:
+        description:
+          type: string
+        currency:
+          type: string 
+        total:
+          type: integer  
+        sub_total:
+          type: integer
+        tax_total:
+          type: integer
+        tax_rate:
+          type: number    

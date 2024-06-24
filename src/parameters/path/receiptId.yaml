@@ -1,0 +1,6 @@
+name: receipt
+in: path
+required: true
+description: The id of the receipt
+schema:
+  type: string

@@ -1,18 +1,15 @@
 get:
-  summary: List Customer Refunds
-  operationId: listCustomerRefund
-  description: List Customer Refund
+  summary: List Subscription Plans
+  operationId: listSubscriptionPlans
+  description: List all subscriptions plans
   tags:
-  - Customers
-  - Refunds
+  - Subscriptions
   parameters:
-    - $ref: "../../parameters/path/customerId.yaml"
     - $ref: "../../parameters/query/limit.yaml"
     - $ref: "../../parameters/query/last_key.yaml"
-    - $ref: "../../parameters/query/name.yaml"
   responses:
     200:
-      description: A paged array of refunds
+      description: A paged array of subscriptions plans
       content:
         application/json:
           schema:
@@ -21,7 +18,7 @@ get:
               data:
                 type: array
                 items:
-                  $ref: "../../schemas/Refund.yaml"
+                  $ref: "../../schemas/SubscriptionPlan.yaml"
               has_more:
                 type: boolean
               last_key:
@@ -29,4 +26,3 @@ get:
                 format: uuid      
     default:
       $ref: "../../responses/UnexpectedError.yaml"
-

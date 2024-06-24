@@ -1,0 +1,19 @@
+post:
+  summary: Charge Invoice
+  operationId: chargeInvoice
+  description: Attempts to charge a card that is on file for the invoice amount
+  tags:
+  - Payments
+  - Invoices
+  parameters:
+    - $ref: "../../parameters/path/invoiceId.yaml"
+  responses:
+    '200':
+        $ref : "../../responses/PaymentResponse.yaml"
+    '402':
+        $ref : "../../responses/PaymentResponse.yaml"
+        description: "Payment failed"
+    '404':     
+        $ref : "../../responses/NullResponse.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"

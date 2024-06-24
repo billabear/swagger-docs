@@ -12,7 +12,4 @@ properties:
     nullable: true
     description: The reference given by the payment provider
   tax_type:
-    type: string
-    example: 'digital_goods'
-    nullable: true
-    description: "The tax type for the product <strong>Since 1.1</strong>"
+    $ref: "./TaxType.yaml"   

@@ -1,6 +1,6 @@
 get:
   summary: Detail
-  operationId: v1ShowSubscriptionById
+  operationId: showSubscriptionById
   description: Info for a specific subscription
   tags:
     - Subscriptions

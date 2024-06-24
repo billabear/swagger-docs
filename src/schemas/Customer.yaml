@@ -27,13 +27,13 @@ properties:
     type: string
     example: 'card'
     nullable: true
-    choices: ['card', 'invoice']  
+    enum: ['card', 'invoice']  
     description: "Choice between card and invoice"
   type:
     type: string
     example: 'business'
     nullable: true
-    choices: ['individual', 'business']  
+    enum: ['individual', 'business']  
     description: "Choice between 'individual' and 'business'. When not provided 'individual' is used. <strong>Since 1.1</strong>"
   reference:
     type: string
@@ -41,7 +41,7 @@ properties:
   external_reference:
     type: string
   address:
-    type: Address
+    $ref: "./Address.yaml"
   locale:
     type: string
     nullable: true

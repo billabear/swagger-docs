@@ -1,6 +1,6 @@
 get:
   summary: Fetch Customer Limits
-  operationId: v1ShowCustomerLimitsById
+  operationId: showCustomerLimitsById
   description: Limits for a specific customer
   tags:
     - Customers
@@ -19,8 +19,9 @@ get:
                 items: {}
               features:
                 type: array
+                items: {}
               user_count:
-                type: int  
+                type: integer
     '404':
       $ref: "../../responses/NullResponse.yaml"            
     default:

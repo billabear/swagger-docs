@@ -1,11 +1,11 @@
 post:
   summary: Change Subscription Plan
-  operationId: v1CustomerChangeSubscriptionPlan
+  operationId: customerChangeSubscriptionPlan
   description: Change the subscription plan for a customer
   tags:
   - Subscriptions
   parameters:
-    - $ref: "../../parameters/path/customerId.yaml"
+    - $ref: "../../parameters/path/subscriptionId.yaml"
   requestBody:
     required: true
     content:
@@ -21,7 +21,7 @@ post:
               type: string
               example: instantly
               enum: ['instantly', 'next-cycle']
-            subscription_plan:
+            plan:
               type: string
               format: uuid
               description: The ID for the subscription plan to be used
@@ -31,6 +31,10 @@ post:
               description: The ID for the price to be used
   responses:
     '202':
-        $ref: "../../schemas/Subscription.yaml"
+      description: "Subscription"
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/Subscription.yaml"
     default:
         $ref : "../../responses/UnexpectedError.yaml"

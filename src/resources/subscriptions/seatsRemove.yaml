@@ -1,0 +1,33 @@
+post:
+  summary: Remove Seats
+  operationId: removeSeatsSubscriptions
+  description: "Remove seats to a per seat subscription<br><br><strong>Since 1.1.4</strong>"
+  tags:
+  - Subscriptions
+  - Customers
+  parameters:
+    - $ref: "../../parameters/path/subscriptionId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+            type: object
+            required:
+              - seats
+            properties:
+              seats:
+                type: integer
+                example: 2
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"

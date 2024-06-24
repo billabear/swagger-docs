@@ -1,0 +1,18 @@
+type: object
+required:
+  - name
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+    example: "Glitter Bombs"
+  code:
+    type: string
+    example: glitter_bombs
+    nullable: true
+  description:
+    type: string
+    example: 'Send your enemies glitter bombs'
+    nullable: true

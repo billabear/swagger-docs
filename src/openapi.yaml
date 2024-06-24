@@ -4,13 +4,19 @@ info:
   title: BillaBear
   description: The REST API provided by BillaBear
   license:
-    name: BUSL-1.1
+    name: FSL
   contact:
     name: API Support
     url: http://www.billabear.com/support
     email: support@billabear.com
 servers:
-  - url: http://demo.billabear.com/v1
+  - url: https://{customerId}.billabear.cloud/api/v1
+    variables:
+      customerId:
+        default: demo
+        description: Customer ID assigned by the service provider
+security:
+  - ApiKeyAuth: []        
 tags:
   - name: Billing
 paths:
@@ -28,18 +34,26 @@ paths:
     $ref: "./resources/customers/limits.yaml"
   /customer/{customerId}/refund:
     $ref: "./resources/customers/refund.yaml"
-  /customer/{paymentId}/payment:
+  /customer/{customerId}/payment:
     $ref: "./resources/customers/payment.yaml"  
+  /customer/{customerId}/invoices:
+    $ref: "./resources/customers/invoices.yaml"  
   /customer/{customerId}/payment-methods/frontend-payment-token:
     $ref: "./resources/paymentDetails/frontendPaymentDetails.yaml"
   /customer/{customerId}/payment-methods/{paymentDetailsId}:
+    $ref: "./resources/paymentDetails/paymentDetailCustomer.yaml"    
+  /payment-methods/{paymentDetailsId}:
     $ref: "./resources/paymentDetails/paymentDetail.yaml"    
   /customer/{customerId}/payment-methods:
     $ref: "./resources/paymentDetails/paymentDetails.yaml"  
   /customer/{customerId}/payment-methods/{paymentDetailsId}/default:
+    $ref: "./resources/paymentDetails/makeDefaultCustomer.yaml"
+  /payment-methods/{paymentDetailsId}/default:
     $ref: "./resources/paymentDetails/makeDefault.yaml"
   /customer/{customerId}/subscription/start:
     $ref: "./resources/subscriptions/customerStart.yaml"
+  /customer/{customerId}/subscription/trial:
+    $ref: "./resources/subscriptions/customerStartTrial.yaml"
   /customer/{customerId}/subscription:
     $ref: "./resources/subscriptions/customerSubscriptions.yaml"
   /payment:
@@ -58,13 +72,36 @@ paths:
     $ref: "./resources/products/prices.yaml"
   /subscription:
     $ref: "./resources/subscriptions/subscriptions.yaml"  
+  /subscription/plans:
+    $ref: "./resources/subscriptions/plans.yaml"  
   /subscription/{subscriptionId}:
     $ref: "./resources/subscriptions/subscription.yaml"  
+  /subscription/{subscriptionId}/seats/add:
+    $ref: "./resources/subscriptions/seatsAdd.yaml"  
+  /subscription/{subscriptionId}/seats/remove:
+    $ref: "./resources/subscriptions/seatsRemove.yaml"  
   /subscription/{subscriptionId}/cancel:
     $ref: "./resources/subscriptions/cancel.yaml"  
+  /subscription/{subscriptionId}/extend:
+    $ref: "./resources/subscriptions/extend.yaml"  
   /subscription/{subscriptionId}/plan:
     $ref: "./resources/subscriptions/subscriptionPlan.yaml"  
+  /subscription/{subscriptionId}/price:
+    $ref: "./resources/subscriptions/changePrice.yaml"  
+  /checkout:
+    $ref: "./resources/checkout/create.yaml"
+  /invoice/{invoiceId}/charge:
+    $ref: "./resources/invoices/charge.yaml"  
+  /invoice/{invoiceId}/download:
+    $ref: "./resources/invoices/download.yaml"  
+  /receipt/{receiptId}/download:
+    $ref: "./resources/receipts/download.yaml"  
 components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
   parameters:
     $ref: "./parameters/_index.yaml"
   schemas:

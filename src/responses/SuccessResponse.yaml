@@ -1,0 +1,8 @@
+description: Success response
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean

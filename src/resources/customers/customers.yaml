@@ -1,6 +1,6 @@
 get:
   summary: List
-  operationId: v1ListCustomers
+  operationId: listCustomers
   description: List all customers
   tags:
   - Customers
@@ -32,7 +32,7 @@ get:
       $ref: "../../responses/UnexpectedError.yaml"
 post:
   summary: Create
-  operationId: v1CreateCustomer
+  operationId: createCustomer
   description: Create a customer
   tags:
   - Customers
@@ -44,7 +44,11 @@ post:
           $ref: "../../schemas/Customer.yaml"
   responses:
     '201':
-        $ref: "../../schemas/Customer.yaml"
+      description: "The customer that was just created"
+      content:
+        application/json:
+          schema:
+           $ref: "../../schemas/Customer.yaml"
     '400':
       $ref: "../../responses/ValidationError.yaml"
     default:

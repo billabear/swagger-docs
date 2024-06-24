@@ -1,6 +1,6 @@
 post:
-  summary: Make Default
-  operationId: makeDefaultPaymentDetails
+  summary: Make Default With Customer
+  operationId: makeDefaultPaymentDetailsCustomer
   description: Delete Payment Details
   tags:
   - PaymentDetails
