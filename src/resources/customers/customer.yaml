@@ -1,6 +1,6 @@
 get:
   summary: Detail
-  operationId: fetchCustomerById
+  operationId: getCustomerById
   description: Info for a specific customer
   tags:
     - Customers

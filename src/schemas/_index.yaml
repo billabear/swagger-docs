@@ -20,3 +20,13 @@ Feature:
   $ref: "./Feature.yaml"
 Limit:
   $ref: "./Limit.yaml"
+Invoice:
+  $ref: "./Invoice.yaml"
+Refund:
+  $ref: "./Refund.yaml"
+BillingAdmin:
+  $ref: "./BillingAdmin.yaml"
+IssueRefundPayment:
+  $ref: "./IssueRefundPayment.yaml"
+VoucherCode:
+  $ref: "./VoucherCode.yaml"

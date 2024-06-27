@@ -1,6 +1,6 @@
 get:
   summary: Fetch Customer Limits
-  operationId: showCustomerLimitsById
+  operationId: getCustomerLimitsById
   description: Limits for a specific customer
   tags:
     - Customers
@@ -16,10 +16,12 @@ get:
             properties:
               limits:
                 type: array
-                items: {}
+                items:
+                  $ref: "../../schemas/Limit.yaml"
               features:
                 type: array
-                items: {}
+                items:
+                  $ref: "../../schemas/Feature.yaml"
               user_count:
                 type: integer
     '404':

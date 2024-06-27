@@ -1,6 +1,6 @@
 get:
   summary: List Customer Payments
-  operationId: listCustomerPayment
+  operationId: getPaymentsForCustomer
   description: List Customer Payment
   tags:
   - Customers

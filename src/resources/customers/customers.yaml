@@ -1,6 +1,6 @@
 get:
   summary: List
-  operationId: listCustomers
+  operationId: getAllCustomers
   description: List all customers
   tags:
   - Customers

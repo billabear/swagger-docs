@@ -40,7 +40,9 @@ post:
             seat_numbrers: 
               type: integer
               example: 1
-               
+            deny_trial:
+              type: bool  
+              example: true 
   responses:
     '201':
       description: "The subscription that has been started"
