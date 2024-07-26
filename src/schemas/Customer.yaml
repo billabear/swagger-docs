@@ -52,3 +52,10 @@ properties:
     nullable: true
     example: default
     description: Defaults to 'default' if not sent.
+  invoice_format:
+    type: string
+    example: 'pdf'
+    nullable: true
+    enum: ['pdf', 'xrechnung']  
+    description: "Choice between 'pdf' and 'xrechnung'. <strong>Since 2024.02.01</strong>"
+  
