@@ -1,0 +1,17 @@
+post:
+  summary: Create Event
+  operationId: createEvent
+  description: Creates an event that is used for usage billing
+  tags:
+  - Usage
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/Event.yaml"
+  responses:
+    '201':
+        $ref : "../../responses/NullResponse.yaml"
+    default:
+        $ref : "../../responses/UnexpectedError.yaml"
