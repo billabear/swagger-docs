@@ -19,6 +19,7 @@ properties:
     type: object
   value:
     type: float
+    example: 1
   code:
     type: string  
     example: 'code_one'
