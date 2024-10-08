@@ -98,6 +98,8 @@ paths:
     $ref: "./resources/invoices/download.yaml"  
   /receipt/{receiptId}/download:
     $ref: "./resources/receipts/download.yaml"  
+  /events:
+    $ref: "./resources/events/events.yaml"
 components:
   securitySchemes:
     ApiKeyAuth:
