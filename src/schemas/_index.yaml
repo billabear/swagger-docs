@@ -30,3 +30,9 @@ IssueRefundPayment:
   $ref: "./IssueRefundPayment.yaml"
 VoucherCode:
   $ref: "./VoucherCode.yaml"
+Event:
+  $ref: "./Event.yaml"  
+Metric:
+  $ref: "./Metric.yaml"  
+MetricFilter:
+  $ref: "./MetricFilter.yaml"  

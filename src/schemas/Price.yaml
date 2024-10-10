@@ -33,3 +33,5 @@ properties:
   public:
     type: boolean  
     nullable: true
+  metric:
+    type: Metric  
