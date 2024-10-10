@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+    example: "Revenue"
+  code:
+    type: string  
+    example: 'code_one'
+  aggregation_method:
+    type: string
+    enum: ['count', 'sum', 'latest', 'unique_count', 'max']
+  aggregation_property:
+    type: string
+    nullable: true
+  filters:
+    type: array
+    items:
+      type: MetricFilter
