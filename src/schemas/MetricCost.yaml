@@ -9,7 +9,7 @@ properties:
     example: 10000
   currency:
     type: string
-    example "USD"
+    example: "USD"
   usage:
     type: float
-    example 1434.33      
+    example: 1434.33      
