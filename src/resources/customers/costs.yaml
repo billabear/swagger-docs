@@ -1,7 +1,7 @@
 get:
   summary: Usage Cost Estimate
   operationId: getCustomerCosts
-  description: Info for a specific customer
+  description: The estimated costs from usage based billing for a customer
   tags:
     - Customers
     - Usage
@@ -9,7 +9,7 @@ get:
     - $ref: "../../parameters/path/customerId.yaml"
   responses:
     '200':
-      description: A paged array of customers
+      description: The usage costs for a customer
       content:
         application/json:
           schema:
