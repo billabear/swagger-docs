@@ -36,3 +36,7 @@ Metric:
   $ref: "./Metric.yaml"  
 MetricFilter:
   $ref: "./MetricFilter.yaml"  
+MetricCost:
+  $ref: "./MetricCost.yaml"  
+Cost:
+  $ref: "./Cost.yaml"  

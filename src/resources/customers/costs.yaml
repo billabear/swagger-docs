@@ -1,0 +1,27 @@
+get:
+  summary: Usage Cost Estimate
+  operationId: getCustomerCosts
+  description: Info for a specific customer
+  tags:
+    - Customers
+    - Usage
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    '200':
+      description: A paged array of customers
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              costs:
+                type: array
+                items:
+                  $ref: "../../schemas/MetricCost.yaml"
+              cost:
+                  $ref: "../../schemas/Cost.yaml"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
