@@ -9,9 +9,6 @@ properties:
   event_id:
     type: string
     format: uuid
-  customer:
-    type: string
-    format: uuid
   subscription:
     type: string
     format: uuid
