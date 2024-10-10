@@ -1,7 +1,6 @@
 type: object
 required:
   - event_id
-  - customer
   - subscription
   - value
   - code
