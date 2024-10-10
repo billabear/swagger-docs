@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+    example: "Cool Stuff"
+  code:
+    type: string
+    example: "cool_stuff"  
+  value:
+    type: string
+    example: "is_totally_cool"
+  type:
+    type: string
+    enum: ['inclusive', 'exclusive']  
