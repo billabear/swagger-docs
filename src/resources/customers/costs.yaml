@@ -23,5 +23,11 @@ get:
                   $ref: "../../schemas/Cost.yaml"
     '404':
       $ref: "../../responses/NullResponse.yaml"
+    '422':
+      description: The customer doesn't have any subscriptions that are usage based
+      content:
+        application/json:
+          schema:
+            type: array 
     default:
       $ref: "../../responses/UnexpectedError.yaml"
