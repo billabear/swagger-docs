@@ -30,6 +30,7 @@ get:
       $ref: "../../responses/UnexpectedError.yaml"
 post:
   summary: Create Usage Limit
+  operationId: createCustomerUsageLimit
   description: Create Usage Limit for the custoemr
   tags:
     - Customers
