@@ -1,0 +1,62 @@
+get:
+  summary: Fetch Customer Usage Limits
+  operationId: getCustomerUsageLimitsById
+  description: Usage Limits for a specific customer
+  tags:
+    - Customers
+    - Usage
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/UsageLimit.yaml"
+              has_more:
+                type: boolean
+              last_key:
+                type: string
+                format: uuid      
+    '404':
+      $ref: "../../responses/NullResponse.yaml"            
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
+post:
+  summary: Create Usage Limit
+  description: Create Usage Limit for the custoemr
+  tags:
+    - Customers
+    - Usage
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+            type: object
+            required:
+              - amount
+              - action
+            properties:
+              amount:
+                type: integer
+                example: 2000
+              action:
+                type: string
+                enum: ['WARNING', 'DISABLE']
+                example: 'WARNING' 
+  responses:
+    '201':
+      description: "Usage Limit"
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/UsageLimit.yaml"

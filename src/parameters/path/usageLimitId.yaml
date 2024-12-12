@@ -1,0 +1,6 @@
+name: usageLimitId
+in: path
+required: true
+description: The id of the usage limit
+schema:
+  type: string

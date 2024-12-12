@@ -1,0 +1,12 @@
+delete:
+  summary: Delete Usage Limit
+  description: Delete Usage Limit for the custoemr
+  tags:
+    - Customers
+    - Usage
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+    - $ref: "../../parameters/path/usageLimitId.yaml"
+  responses:
+    '200':
+      description: "Deleted Limit"
