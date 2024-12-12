@@ -38,6 +38,10 @@ paths:
     $ref: "./resources/customers/refund.yaml"
   /customer/{customerId}/payment:
     $ref: "./resources/customers/payment.yaml"  
+  /customer/{customerId}/uasge-limit:
+    $ref: "./resources/customers/usageLimits.yaml"  
+  /customer/{customerId}/uasge-limit/{limitId}:
+    $ref: "./resources/customers/deleteUsageLimit.yaml"  
   /customer/{customerId}/invoices:
     $ref: "./resources/customers/invoices.yaml"  
   /customer/{customerId}/payment-methods/frontend-payment-token:

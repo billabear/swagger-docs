@@ -40,3 +40,5 @@ MetricCost:
   $ref: "./MetricCost.yaml"  
 Cost:
   $ref: "./Cost.yaml"  
+UsageLimit:
+  $ref: "./UsageLimit.yaml"  
