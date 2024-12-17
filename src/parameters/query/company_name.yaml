@@ -1,0 +1,6 @@
+name: company_name
+in: query
+description: The company name to search for
+required: false
+schema:
+  type: string
