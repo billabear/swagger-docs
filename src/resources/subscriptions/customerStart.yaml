@@ -43,6 +43,9 @@ post:
             deny_trial:
               type: bool  
               example: true 
+            metadata:
+              type: object
+              description: Any metadata you want to add to a subscription
   responses:
     '201':
       description: "The subscription that has been started"

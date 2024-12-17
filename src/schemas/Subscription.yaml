@@ -23,6 +23,10 @@ properties:
     type: string
   child_external_reference:
     type: string
+  metadata:
+    oneOf:
+      - type: object
+      - type: array
   price:
     $ref: "./Price.yaml"    
   plan:
