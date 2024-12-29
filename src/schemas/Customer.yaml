@@ -58,4 +58,7 @@ properties:
     nullable: true
     enum: ['pdf', 'xrechnung']  
     description: "Choice between 'pdf' and 'xrechnung'. <strong>Since 2024.02.01</strong>"
-  
+  marketing_opt_in:
+    type: boolean
+    nullable: true
+    description: "If the customer has opted in for marketing"
