@@ -4,7 +4,7 @@ info:
   title: BillaBear
   description: The REST API provided by BillaBear
   license:
-    name: FSL
+    name: FCL
   contact:
     name: API Support
     url: http://www.billabear.com/support
