@@ -34,4 +34,4 @@ properties:
     type: boolean  
     nullable: true
   metric:
-    type: Metric  
+    $ref: "./Metric.yaml"    
