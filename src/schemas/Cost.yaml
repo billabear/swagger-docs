@@ -1,7 +1,7 @@
 type: object
 properties:
   amount:
-    type: int
+    type: integer
     example: 10000
   currency:
     type: string
