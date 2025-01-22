@@ -13,7 +13,7 @@ post:
         schema:
           type: object
           required:
-            - subscription_plan
+            - plan
             - price
             - when
           properties:
