@@ -62,3 +62,6 @@ properties:
     type: boolean
     nullable: true
     description: "If the customer has opted in for marketing"
+  metadata:
+    type: object
+    description: Any metadata you want to add to a customer
