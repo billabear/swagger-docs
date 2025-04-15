@@ -8,7 +8,7 @@ get:
     - $ref: "../../parameters/path/customerId.yaml"
   responses:
     200:
-      description: A paged array of invoices
+      description: The token and url for the customer portal
       content:
         application/json:
           schema:
