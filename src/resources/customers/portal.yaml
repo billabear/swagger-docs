@@ -1,0 +1,26 @@
+get:
+  summary: Get Portal Manage Link
+  operationId: getCustomerPortalManageLink
+  description: Get the manage link for the customer portal
+  tags:
+    - Customers
+  parameters:
+    - $ref: "../../parameters/path/customerId.yaml"
+  responses:
+    200:
+      description: A paged array of invoices
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              token:
+                type: string
+                example: 27cd18da18bcf7ef953070884fdfefcb7c229a4d56f7f5abec495e540fd5563f    
+              url:
+                type: string
+                example: "https://example.billabear.cloud/portal/customer/27cd18da18bcf7ef953070884fdfefcb7c229a4d56f7f5abec495e540fd5563f"
+    '404':
+      $ref: "../../responses/NullResponse.yaml"
+    default:
+      $ref: "../../responses/UnexpectedError.yaml"
